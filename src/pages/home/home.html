@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Linkmore
+    </ion-title>
+    <ion-icon [navPush]='userProfilePage' name='person'></ion-icon>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button [navPush]='groupCreatePage' ion-item>
+      <ion-icon item-left name='add-circle'></ion-icon>
+      <h1>Create New Event</h1>
+    </button>
+    <div *ngFor='let EventListItemComponent in events'>
+      <event-list-item></event-list-item>
+    </div>
+  </ion-list>
+</ion-content>
