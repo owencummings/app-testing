@@ -1,17 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { GroupVotePage } from '../group-vote/group-vote';
 import { GroupEventPage } from '../group-event/group-event';
 import { GroupCreatePage } from '../group-create/group-create';
 import { UserProfilePage } from '../user-profile/user-profile';
-import { EventListItemComponent } from '../../components/event-list-item/event-list-item';
-
-const EVENTS: EventListItemComponent[] = [
-  {name: 'hey', status: 'now', message: 'pls'},
-  {name: 'hey', status: 'now', message: 'pls'},
-  {name: 'hey', status: 'now', message: 'pls'}
-]
-
+import { DataProvider } from '../../providers/data/data';
+import { GroupChatPage } from '../group-chat/group-chat';
 
 
 @Component({
@@ -21,14 +15,24 @@ const EVENTS: EventListItemComponent[] = [
 
 
 export class HomePage {
-  events = EVENTS;
   groupVotePage = GroupVotePage;
   groupEventPage = GroupEventPage;
   groupCreatePage = GroupCreatePage;
   userProfilePage = UserProfilePage;
-  eventListItemComponent = EventListItemComponent;
-  constructor(public navCtrl: NavController) {
+  groupChatPage = GroupChatPage;
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
 
+  }
+
+  public goToVote(event){
+    this.navCtrl.push(this.groupVotePage, {event: event});
+  }
+
+  public goToEvent(event){
+    this.navCtrl.push(this.groupEventPage, {event: event});
+  }
+
+  ionViewDidLoad(){
   }
 
 }

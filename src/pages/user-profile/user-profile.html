@@ -8,16 +8,18 @@
 <ion-content padding>
   <ion-list>
     <ion-item>
-      <h2>User Profile Picture Here</h2>
+      <ion-avatar>
+        <img [src]=dataProvider.data.userDb[dataProvider.data.id].profilePicture>
+      </ion-avatar>
     </ion-item>
     <ion-item>
-      <h2>John Doe</h2>
+      <h2>{{ dataProvider.data.userDb[dataProvider.data.id].name }}</h2>
     </ion-item>
     <ion-item >
       <h2>Link Score: 100</h2>
     </ion-item>
     <ion-item >
-      <h2>View Profile</h2>
+      <h2>View Full Profile</h2>
     </ion-item>
     <ion-item >
       <h2>Log Out</h2>

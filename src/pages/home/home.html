@@ -1,20 +1,39 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Linkmore
+      Votelink
     </ion-title>
     <ion-icon [navPush]='userProfilePage' name='person'></ion-icon>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-list>
-    <button [navPush]='groupCreatePage' ion-item>
+    <button (click)='this.navCtrl.push(groupCreatePage)' ion-item>
       <ion-icon item-left name='add-circle'></ion-icon>
       <h1>Create New Event</h1>
     </button>
-    <div *ngFor='let EventListItemComponent in events'>
-      <event-list-item></event-list-item>
-    </div>
+      <div *ngFor='let event of dataProvider.data.eventDb'>
+        <div *ngIf='event.eventStage == 0'>
+          <button (click)='goToVote(event)' ion-item>
+            <ion-avatar item-left>
+              <img [src]=dataProvider.data.userDb[event.ownerId].profilePicture>
+            </ion-avatar>
+            <h2>{{ event.name }}</h2>
+            <h3>{{ event.status }}</h3>
+            <p>{{ event.message }}</p>
+          </button>
+        </div>
+        <div *ngIf='event.eventStage == 1'>
+          <button (click)='goToEvent(event)' ion-item>
+            <ion-avatar item-left>
+              <img [src]=dataProvider.data.userDb[event.ownerId].profilePicture>
+            </ion-avatar>
+            <h2>{{ event.name }}</h2>
+            <h3>{{ event.status }}</h3>
+            <p>{{ event.message }}</p>
+          </button>
+        </div>
+      </div>
   </ion-list>
 </ion-content>
