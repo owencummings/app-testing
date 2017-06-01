@@ -42,7 +42,6 @@ export class GroupChatPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
     this.chatBox = "";
-    //this.event = event;
   }
 
 
@@ -62,9 +61,7 @@ export class GroupChatPage {
   }
 
   ionViewDidLoad() {
-      console.log(this.event);
       this.event = this.navParams.get('event');
-      console.log(this.event);
   }
 
 }
