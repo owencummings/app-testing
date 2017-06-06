@@ -1,85 +1,43 @@
+
 <ion-header>
   <ion-navbar>
-    <ion-title>
-    New Event
-    </ion-title>
   </ion-navbar>
-  <ion-segment [(ngModel)]="section">
-    <ion-segment-button value="overview">
-      Overview
-    </ion-segment-button>
-    <ion-segment-button value="event">
-      Event
-    </ion-segment-button>
-    <ion-segment-button value="time">
-      Time
-    </ion-segment-button>
-  </ion-segment>
 </ion-header>
 
 <ion-content>
-  <div [ngSwitch]='section'>
-    <ion-list *ngSwitchCase='"overview"'>
-      <ion-item>
-        <p>Title</p>
-      </ion-item>
-      <ion-item>
-        <ion-input [(ngModel)]='name' placeholder='Name your Group'></ion-input>
-      </ion-item>
-      <ion-item>
-      </ion-item>
-      <ion-item>
-        <p>Invite List</p>
-      </ion-item>
-      <ion-item>
-        <div *ngFor='let user of users'>
-          <ion-avatar>
-            <img [src]='dataProvider.data.userDb[user].profilePicture'>
-          </ion-avatar>
-        </div>
-      </ion-item>
-      <ion-item>
-        <p>Add More</p>
-      </ion-item>
-    </ion-list>
-    <ion-list *ngSwitchCase='"event"'>
-      <ion-item>
-        <p>Event Options</p>
-      </ion-item>
-      <div *ngFor="let item of activities">
-        <ion-item>
-          {{ item }}
-        </ion-item>
-      </div>
-      <ion-item >
-        <ion-input [(ngModel)]='activityInput' placeholder='Add More...' (keypress)='addActivity($event.keyCode)'></ion-input>
-      </ion-item>
-    </ion-list>
-    <ion-list *ngSwitchCase='"time"'>
-      <ion-item>
-        <p>Dates</p>
-      </ion-item>
+  <ion-list inset>
+    <ion-item-divider>
+      TITLE
+    </ion-item-divider>
+    <ion-item>
+      <ion-input [(ngModel)]='name' placeholder='Name your Group' type='search'></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<!--
+
+  <ion-slide>
+    <ion-list>
+      <ion-item-divider>
+        DATE
+      </ion-item-divider>
       <ion-item>
         <span *ngFor="let item of dates; let isLast=last">
           {{item}}{{isLast ? '' : ', '}}
         </span>
       </ion-item>
-      <ion-item >
-        <p>Add More</p>
+      <ion-item>
+        <p>Add More...</p>
       </ion-item>
       <ion-item >
 
       </ion-item>
+      <ion-item-divider>
+        TIME
+      </ion-item-divider>
       <ion-item>
-        <p>Times</p>
-      </ion-item>
-      <ion-item>
-        <span *ngFor="let item of times; let isLast=last">
-          {{item}}{{isLast ? '' : ', '}}
-        </span>
-      </ion-item>
-      <ion-item >
-        <p>Add More</p>
+        <ion-label fixed>Time Frame:</ion-label>
+        None
       </ion-item>
       <ion-item >
       </ion-item>
@@ -88,11 +46,13 @@
       </ion-item>
 
     </ion-list>
-  </div>
+  </ion-slide>
+</ion-slides>
 </ion-content>
+-->
 
 <ion-footer>
-  <ion-toolbar (click)='createGroup()'>
-    <ion-title>Create</ion-title>
+  <ion-toolbar (click)='goToGroupCreatePage2()'>
+    <ion-icon name='arrow-down'></ion-icon>
   </ion-toolbar>
 </ion-footer>

@@ -186,4 +186,9 @@ export class DataProvider {
   }
 
 
+  public searchFriends(searchTerm){
+    return this.data.userDb.filter((user) => {
+      return user.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+    });
+  }
 }

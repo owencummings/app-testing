@@ -9,9 +9,14 @@ import { HomePage } from '../pages/home/home';
 import { GroupVotePage } from '../pages/group-vote/group-vote';
 import { GroupEventPage } from '../pages/group-event/group-event';
 import { GroupCreatePage } from '../pages/group-create/group-create';
+import { GroupCreate2Page } from '../pages/group-create2/group-create2';
+import { GroupCreate3Page } from '../pages/group-create3/group-create3';
+import { GroupCreate4Page } from '../pages/group-create4/group-create4';
+import { GroupCreate5Page } from '../pages/group-create5/group-create5';
 import { UserProfilePage } from '../pages/user-profile/user-profile';
 import { DataProvider } from '../providers/data/data';
 import { GroupChatPage } from '../pages/group-chat/group-chat';
+import { NewEventProvider } from '../providers/new-event/new-event';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,10 @@ import { GroupChatPage } from '../pages/group-chat/group-chat';
     GroupVotePage,
     GroupEventPage,
     GroupCreatePage,
+    GroupCreate2Page,
+    GroupCreate3Page,
+    GroupCreate4Page,
+    GroupCreate5Page,
     UserProfilePage,
     GroupChatPage
   ],
@@ -34,6 +43,10 @@ import { GroupChatPage } from '../pages/group-chat/group-chat';
     GroupVotePage,
     GroupEventPage,
     GroupCreatePage,
+    GroupCreate2Page,
+    GroupCreate3Page,
+    GroupCreate4Page,
+    GroupCreate5Page,
     UserProfilePage,
     GroupChatPage
   ],
@@ -41,7 +54,8 @@ import { GroupChatPage } from '../pages/group-chat/group-chat';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataProvider
+    DataProvider,
+    NewEventProvider
   ]
 })
 export class AppModule {}

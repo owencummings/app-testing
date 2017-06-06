@@ -1,0 +1,40 @@
+<!--
+  Generated template for the GroupCreate3Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title></ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item-divider>DATES</ion-item-divider>
+  <ion-row>
+    <ion-item>
+      <ion-scroll scrollX="true" style='height: 120px'>
+        <div *ngFor='let date of dateList'>
+          {{ date }}
+        </div>
+      </ion-scroll>
+    </ion-item>
+  </ion-row>
+  <ion-item>
+    <ion-datetime [(ngModel)]='datePicked' displayFormat='DDDD, M/D ' pickerFormat='MMM D YYYY' placeholder='Choose a Date...' min='2017' max='2018'>
+    </ion-datetime>
+  </ion-item>
+  <button ion-button (click)='addToDateList()'>Add</button>
+  <ion-item-divider>TIME</ion-item-divider>
+  <button ion-item (click)='presentTimeOptions()' placeholder='Choose a Time...'>{{ timeOption }}</button>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar (click)='goToGroupCreatePage4()'>
+    <ion-icon name='arrow-down'></ion-icon>
+  </ion-toolbar>
+</ion-footer>

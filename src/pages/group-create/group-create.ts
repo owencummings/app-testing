@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { DataProvider } from '../../providers/data/data'
+import { DataProvider } from '../../providers/data/data';
+import { NewEventProvider } from '../../providers/new-event/new-event';
+import { GroupCreate2Page } from '../group-create2/group-create2';
 /**
  * Generated class for the GroupCreatePage page.
  *
@@ -14,7 +16,8 @@ import { DataProvider } from '../../providers/data/data'
 })
 export class GroupCreatePage {
 
-
+  groupCreate2Page = GroupCreate2Page;
+ /*
   event: any = {
     id: -1,
     notification: 0,
@@ -34,25 +37,52 @@ export class GroupCreatePage {
     chat: [],
     votes: [],
   };
+  */
 
   name: any = '';
+  /*
   activities: any = [];
   dates: any =  [];
   times: any =  [];
   voteTime: any = [];
   users: any = [];
   section: any = 'overview';
+  alterFriends: any = 'add';
   activityInput: any = '';
+  friendName: string = '';
+  friends: any = [];
+  timeRange: any = ''; */
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
-    this.section = 'overview';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+      public dataProvider: DataProvider, public newEventProvider: NewEventProvider ) {
+
+
     this.name = '';
+    /*
     this.activities = [];
     this.dates = [];
     this.times = [];
-    this.users = [];
+    this.users = [this.dataProvider.data.id];
     this.activityInput = '';
+    this.friends = this.dataProvider.searchFriends('');
+    this.friendName = '';
+    this.timeRange = ''; */
+  }
+
+  public goToGroupCreatePage2(){
+    this.newEventProvider.name = this.name;
+    this.navCtrl.push(this.groupCreate2Page);
+    console.log(this.newEventProvider.name);
+  }
+
+
+/*
+
+
+  public showTimes(){
+
   }
 
   public reset(){
@@ -95,7 +125,7 @@ export class GroupCreatePage {
       this.navCtrl.pop();
     }
   }
-
+*/
   ionViewDidLoad() {
     console.log('ionViewDidLoad GroupCreatePage');
   }
