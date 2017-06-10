@@ -5,23 +5,19 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <img [src]=dataProvider.data.userDb[dataProvider.data.id].profilePicture>
   <ion-list>
-    <ion-item>
-      <ion-avatar>
-        <img [src]=dataProvider.data.userDb[dataProvider.data.id].profilePicture>
-      </ion-avatar>
-    </ion-item>
-    <ion-item>
+    <ion-item text-center>
       <h2>{{ dataProvider.data.userDb[dataProvider.data.id].name }}</h2>
     </ion-item>
-    <ion-item >
+    <ion-item text-center>
       <h2>Link Score: 100</h2>
     </ion-item>
-    <ion-item >
+    <ion-item text-center>
       <h2>View Full Profile</h2>
     </ion-item>
-    <ion-item >
+    <ion-item text-center>
       <h2>Log Out</h2>
     </ion-item>
 

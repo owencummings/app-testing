@@ -1,18 +1,18 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar class='navBar'>
     <ion-title>
       Votelink
     </ion-title>
-    <ion-icon [navPush]='userProfilePage' name='person'></ion-icon>
+    <ion-icon id='profileIcon' [navPush]='userProfilePage' name='person'></ion-icon>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list inset>
-    <button (click)='this.navCtrl.push(groupCreatePage)' ion-item>
-      <ion-icon item-left name='add-circle'></ion-icon>
-      <h1>Create New Event</h1>
-    </button>
+  <ion-list no-line>
+    <ion-item (click)='this.navCtrl.push(groupCreatePage)'>
+      <ion-icon class='newEvent' name='add-circle'></ion-icon>
+      <!--<h3 class='newEvent' text-center>- Create New Event -</h3>-->
+    </ion-item>
       <div *ngFor='let event of dataProvider.data.eventDb'>
         <div *ngIf='event.eventStage == 0'>
           <button (click)='goToVote(event)' ion-item>

@@ -72,8 +72,10 @@ export class GroupCreatePage {
   }
 
   public goToGroupCreatePage2(){
-    this.newEventProvider.name = this.name;
-    this.navCtrl.push(this.groupCreate2Page);
+    if (this.name != ''){
+      this.newEventProvider.name = this.name;
+      this.navCtrl.push(this.groupCreate2Page);
+    }
     console.log(this.newEventProvider.name);
   }
 

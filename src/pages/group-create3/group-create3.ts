@@ -28,11 +28,15 @@ export class GroupCreate3Page {
        public actionSheetCtrl: ActionSheetController) {
       this.dateList = [];
       this.datePicked = '';
-      this.timeOption = '';
+      this.timeOption = 'Choose a Time Option...';
   }
 
   public goToGroupCreatePage4(){
-    this.navCtrl.push(this.groupCreate4Page);
+    if (this.dateList != [] && this.timeOption != 'Chooce a Time Option...'){
+      this.newEventProvider.dateList = this.dateList;
+      this.newEventProvider.timeSetting = this.timeOption;
+      this.navCtrl.push(this.groupCreate4Page);
+    }
   }
 
   presentTimeOptions(){

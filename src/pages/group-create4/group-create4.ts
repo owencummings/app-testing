@@ -29,7 +29,10 @@ export class GroupCreate4Page {
   }
 
   public goToGroupCreatePage5(){
-    this.navCtrl.push(this.groupCreate5Page);
+    if (this.activities != []){
+      this.newEventProvider.eventList = this.activities;
+      this.navCtrl.push(this.groupCreate5Page);
+    }
   }
 
   public addActivity(keyCode){

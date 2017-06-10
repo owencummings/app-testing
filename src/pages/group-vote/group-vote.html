@@ -7,35 +7,34 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-list>
     <ion-item>
-        <div *ngFor='let user of event.invitedUsers'>
+        <span *ngFor='let user of event.invitedUsers'>
           <ion-avatar>
             <img [src]=dataProvider.data.userDb[user].profilePicture>
           </ion-avatar>
+        </span>
+    </ion-item>
+    <ion-item>
+      <h2>{{ event.voteTimeSetting }}</h2>
+    </ion-item>
+    <ion-item>
+      <ion-scroll scrollX="true" style='height: 120px'>
+        <div *ngFor='let date of event.voteDayOptions'>
+          <p> {{ date }} </p>
         </div>
+      </ion-scroll>
     </ion-item>
-    <ion-item >
-      <h1>Your Vote</h1>
+    <ion-item>
+      <ion-scroll scrollX="true" style='height: 120px'>
+        <div *ngFor='let activity  of event.voteLocationActivityOptions'>
+          <p> {{ activity }} </p>
+        </div>
+      </ion-scroll>
     </ion-item>
-    <ion-item >
-      <h2>Vote for Event</h2>
-    </ion-item>
-    <ion-item >
-      <h2>Undecided</h2>
-    </ion-item>
-    <ion-item >
-      <h2>Vote for Date</h2>
-    </ion-item>
-    <ion-item >
-      <h2>Undecided</h2>
-    </ion-item>
-    <ion-item >
-      <h2>Vote for Time</h2>
-    </ion-item>
-    <ion-item >
-      <h2>Undecided</h2>
+    <ion-item>
+      <button ion-button (click)='goToVote2(event)'>Your Vote</button>
     </ion-item>
   </ion-list>
 </ion-content>

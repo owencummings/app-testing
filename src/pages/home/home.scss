@@ -1,3 +1,52 @@
 page-home {
+  ion-content{
+    background-color: map-get($colors, primary);
+  }
 
+/*
+  ion-avatar {
+    width: 20vw;
+    height: 20vw;
+    margin: 1vh;
+  }
+  */
+
+
+  ion-list{
+    background-color: map-get($colors, primary);
+  }
+
+  .item-ios ion-avatar ion-img, .item-ios ion-avatar img{
+    width: 12vh;
+    height: 12vh;
+    //margin-top: 1vh;
+
+  }
+
+  .item-ios ion-avatar[item-left]{
+    margin: 1vh 3vh 1vh 0vh;
+  }
+
+  .newEvent {
+    color: map-get($colors, light);
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: center;
+  }
+
+  .item-ios {
+    height: 14vh;
+    border-top-left-radius:  7vh;
+    border-bottom-left-radius:  7vh;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    padding-left: 1vh;
+
+  }
+
+  #profileIcon {
+    font-size: 2em;
+    padding-left: 6vw;
+    color: #fff;
+  }
 }

@@ -5,54 +5,18 @@
 </ion-header>
 
 <ion-content>
-  <ion-list inset>
-    <ion-item-divider>
-      TITLE
-    </ion-item-divider>
+  <ion-list>
+      <h1>
+        TITLE
+      </h1>
     <ion-item>
-      <ion-input [(ngModel)]='name' placeholder='Name your Group' type='search'></ion-input>
+      <ion-input [(ngModel)]='name' placeholder='Name Your Group...' type='search' text-center></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>
-<!--
-
-  <ion-slide>
-    <ion-list>
-      <ion-item-divider>
-        DATE
-      </ion-item-divider>
-      <ion-item>
-        <span *ngFor="let item of dates; let isLast=last">
-          {{item}}{{isLast ? '' : ', '}}
-        </span>
-      </ion-item>
-      <ion-item>
-        <p>Add More...</p>
-      </ion-item>
-      <ion-item >
-
-      </ion-item>
-      <ion-item-divider>
-        TIME
-      </ion-item-divider>
-      <ion-item>
-        <ion-label fixed>Time Frame:</ion-label>
-        None
-      </ion-item>
-      <ion-item >
-      </ion-item>
-      <ion-item (click)='reset()'>
-        <h2>Reset</h2>
-      </ion-item>
-
-    </ion-list>
-  </ion-slide>
-</ion-slides>
-</ion-content>
--->
 
 <ion-footer>
   <ion-toolbar (click)='goToGroupCreatePage2()'>
-    <ion-icon name='arrow-down'></ion-icon>
+    <ion-icon class='nextArrowDown' name='arrow-down'></ion-icon>
   </ion-toolbar>
 </ion-footer>

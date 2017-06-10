@@ -1,3 +1,15 @@
 page-group-create {
-
+  h1 {
+    font-weight: bolder;
+    color: map-get($colors, dark);
+    margin-left: 20vw;
+    margin-top: 20vh;
+  }
+  .item-ios {
+    height: 14vh;
+    margin-left: 10%;
+    width: 80%;
+    border-radius: 7vh;
+    
+  }
 }

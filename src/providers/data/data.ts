@@ -29,6 +29,7 @@ export class DataProvider {
         message: 'I\'m telling you, mild sauce is the way to go!',
         eventStage: 0,
         voteTime: null,
+        voteTimeSetting: 'Evening',
         voteTimeOptions: ['6PM'],
         voteDayOptions: ['May 21st'],
         voteLocationActivityOptions: ['Harry\'s Bar and Grill', 'Cafe Olay', 'Earthen Eats', 'Swiss Charred'],
@@ -57,14 +58,7 @@ export class DataProvider {
           }
 
         ],
-        votes: [
-          {
-            id: 0,
-            time: '6PM',
-            day: 'May 21st',
-            locationActivity: 'Swiss Charred'
-          }
-        ],
+        votes: [],
       },
       {
         id: 1,
@@ -72,9 +66,10 @@ export class DataProvider {
         ownerId: 2,
         name: 'The Banana Gang',
         status: 'Club Psi | Today, 9PM',
-         message: 'Let\'s great wrecked, son!',
+         message: 'Let\'s get wrecked, son!',
          eventStage: 1,
          voteTime: null,
+         voteTimeSetting: 'Evening',
          voteTimeOptions: ['9PM'],
          voteDayOptions: ['May 18th, May 19th'],
          voteLocationActivityOptions: ['Club Psi', 'Dive', 'Ernie\'s Taproom'],
@@ -101,6 +96,7 @@ export class DataProvider {
         message: 'Love you too, honey.',
         eventStage: 1,
         voteTime: null,
+        voteTimeSetting: 'Noontime',
         voteTimeOptions: ['12PM', '1PM'],
         voteDayOptions: ['May 20th'],
         voteLocationActivityOptions: ['Tortuga\'s', 'The Dancing Racoon', 'Small Talk Diner'],
@@ -127,6 +123,7 @@ export class DataProvider {
         message: 'The Bingo Boards are playing at Luigi\'s!',
         eventStage: 0,
         voteTime: null,
+        voteTimeSetting: 'Late',
         voteTimeOptions: ['9PM'],
         voteDayOptions: ['May 26th'],
         voteLocationActivityOptions: ['Luigi\'s', 'Smoke Hole', 'Board games at Red\'s'],
@@ -149,7 +146,7 @@ export class DataProvider {
         {
           id: 0,
           name: 'Red Cortland',
-          profilePicture: "https://s3.amazonaws.com/uifaces/faces/twitter/dancounsell/128.jpg",
+          profilePicture: "https://scontent.fewr1-3.fna.fbcdn.net/v/t1.0-9/10888752_10205808730847554_3785813952988993107_n.jpg?oh=37c3131b705502bca2ec37e6e322ae21&oe=59E366A1",
           votesFor: ['Sushi', 'Bowling', 'Live Music', 'Brooklyn'],
           topFriends: [1, 2, 3],
           invitedEvents: [0,1,2,3]
@@ -157,14 +154,14 @@ export class DataProvider {
         {
           id: 1,
           name: 'Violet Eudicot',
-          profilePicture: "https://s3.amazonaws.com/uifaces/faces/twitter/mlane/128.jpg",
+          profilePicture: "https://scontent.fewr1-3.fna.fbcdn.net/v/t1.0-9/18425194_1339945392721618_3349501672049216907_n.jpg?oh=5cd03409be8d14d3f2d2898f4ff82b5f&oe=59AB672A",
           votesFor: ['Brunch', 'Outdoors', 'Sports', 'Healthy'],
           topFriends: [0],
           invitedEvents: [0,2,3]},
         {
           id: 2,
           name: 'Blue Amson',
-          profilePicture: "https://s3.amazonaws.com/uifaces/faces/twitter/jm_denis/128.jpg",
+          profilePicture: "https://scontent.fewr1-3.fna.fbcdn.net/v/t1.0-9/18402913_1673719822658192_6059956215396574961_n.jpg?oh=e072c7df776664d374fb417af63a35ad&oe=59D69155",
           votesFor: ['Free', 'Sandwiches', 'Just Hang Out', 'Brooklyn'],
           topFriends: [0,3],
           invitedEvents: [0,1,3]
@@ -172,7 +169,7 @@ export class DataProvider {
         {
           id: 3,
           name: 'Amber Fields',
-          profilePicture: "https://s3.amazonaws.com/uifaces/faces/twitter/chadengle/128.jpg",
+          profilePicture: "https://scontent.fewr1-3.fna.fbcdn.net/v/t1.0-9/1910644_10204752992527659_9100597016961280937_n.jpg?oh=04716d37c80419554ddc1bd6a906be0b&oe=59E912E1",
           votesFor: ['Black Tie', 'Ballroom Dancing', 'Fine Dining', 'Manhattan'],
           topFriends: [1,3],
           invitedEvents: [1,3]

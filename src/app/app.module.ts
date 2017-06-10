@@ -7,6 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { GroupVotePage } from '../pages/group-vote/group-vote';
+import { GroupVote2Page } from '../pages/group-vote2/group-vote2';
+import { GroupVoteActivityPage } from '../pages/group-vote-activity/group-vote-activity';
+import { GroupVoteTimePage } from '../pages/group-vote-time/group-vote-time';
 import { GroupEventPage } from '../pages/group-event/group-event';
 import { GroupCreatePage } from '../pages/group-create/group-create';
 import { GroupCreate2Page } from '../pages/group-create2/group-create2';
@@ -23,6 +26,9 @@ import { NewEventProvider } from '../providers/new-event/new-event';
     MyApp,
     HomePage,
     GroupVotePage,
+    GroupVote2Page,
+    GroupVoteActivityPage,
+    GroupVoteTimePage,
     GroupEventPage,
     GroupCreatePage,
     GroupCreate2Page,
@@ -41,6 +47,9 @@ import { NewEventProvider } from '../providers/new-event/new-event';
     MyApp,
     HomePage,
     GroupVotePage,
+    GroupVote2Page,
+    GroupVoteActivityPage,
+    GroupVoteTimePage,
     GroupEventPage,
     GroupCreatePage,
     GroupCreate2Page,

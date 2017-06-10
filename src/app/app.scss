@@ -14,3 +14,40 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+.header{
+  //color: map-get($colors, light) !important;
+  padding-top: 0vh;
+}
+
+ion-navbar.toolbar {
+
+}
+
+ion-title{
+  //padding-top: 4vh;
+}
+
+.toolbar-title-md{
+        color: white;
+        border: none;
+    }
+.toolbar-title-ios{
+        color: white;
+        border: none;
+    }
+
+.toolbar-background{
+    background-color: map-get($colors, primary);
+    //border: 0px !important;
+}
+
+.ion-divider-ios{
+  margin-top: 30vh;
+  background-color: map-get($colors, primary) !important;
+}
+
+.nextArrowDown{
+      font-size: 4em;
+      color: #fff;
+      padding-left: 45vw;
+}

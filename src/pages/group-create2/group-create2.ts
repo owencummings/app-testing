@@ -32,9 +32,10 @@ export class GroupCreate2Page {
   }
 
   public goToGroupCreatePage3(){
-    this.newEventProvider.inviteList = this.users;
-    console.log(this.newEventProvider.inviteList);
-    this.navCtrl.push(this.groupCreate3Page);
+    if (this.users != [this.dataProvider.data.id]){
+      this.newEventProvider.inviteList = this.users;
+      this.navCtrl.push(this.groupCreate3Page);
+    }
   }
 
   public getFriendList(searchTerm){

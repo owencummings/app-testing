@@ -13,9 +13,9 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-item>
-    <h1> Title Here {{ newEventProvider.name }}</h1>
+    <h1> {{ newEventProvider.name }}</h1>
   </ion-item>
   <ion-item>
     <ion-scroll scrollX="true" style='height: 120px'>
@@ -27,18 +27,20 @@
     </ion-scroll>
   </ion-item>
   <ion-item>
-    <h2>Date List Here</h2>
+    <h2>{{ newEventProvider.dateList }}</h2>
   </ion-item>
   <ion-item>
-    <h2>Time Slot</h2>
+    <h2>{{ newEventProvider.timeSetting }}</h2>
   </ion-item>
   <ion-item>
-    <h2>Event List</h2>
+    <h2>{{ newEventProvider.eventList }}</h2>
   </ion-item>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar (click)='goToHome()'>
-    <h2>Confirm</h2>
+  <ion-toolbar >
+    <button (click)='goToHome()' ion-button>
+      CONFIRM
+    </button>
   </ion-toolbar>
 </ion-footer>

@@ -12,13 +12,13 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <ion-segment [(ngModel)]="alterFriends">
-    <ion-segment-button value="add">
-      Add
+    <ion-segment-button style='border-radius: 2vh; margin-right: 4vw;' value="add">
+      ADD
     </ion-segment-button>
-    <ion-segment-button value="remove">
-      Remove
+    <ion-segment-button style='border-radius: 2vh; margin-right: 4vw;' value="remove">
+      REMOVE
     </ion-segment-button>
   </ion-segment>
   <div [ngSwitch]='alterFriends'>
@@ -52,6 +52,6 @@
 
 <ion-footer>
   <ion-toolbar (click)='goToGroupCreatePage3()'>
-    <ion-icon name='arrow-down'></ion-icon>
+    <ion-icon class='nextArrowDown' name='arrow-down'></ion-icon>
   </ion-toolbar>
 </ion-footer>

@@ -14,9 +14,14 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
+
+      //statusBar.styleDefault();
+      //The BG and false thing MAY work during the actual ios build, just not in ionicview
+      //statusBar.overlaysWebView(false);
+      statusBar.backgroundColorByHexString('#EC407A');
+      statusBar.styleLightContent();
+      //statusBar.overlaysWebView(true);
       splashScreen.hide();
     });
   }
 }
-
