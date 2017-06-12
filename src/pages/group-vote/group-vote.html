@@ -9,32 +9,42 @@
 
 <ion-content>
   <ion-list>
-    <ion-item>
-        <span *ngFor='let user of event.invitedUsers'>
-          <ion-avatar>
-            <img [src]=dataProvider.data.userDb[user].profilePicture>
-          </ion-avatar>
+    <ion-item id='inviteList'>
+      <ion-scroll scrollX="true" style='height: 12vh'>
+        <span class='avatarBox' *ngFor='let user of event.invitedUsers'>
+          <div id='invite'>
+            <ion-avatar>
+              <img  class='avatar' [src]=dataProvider.data.userDb[user].profilePicture>
+            </ion-avatar>
+          </div>
         </span>
+      </ion-scroll>
     </ion-item>
-    <ion-item>
+    <ion-item id='time' text-center>
       <h2>{{ event.voteTimeSetting }}</h2>
     </ion-item>
-    <ion-item>
-      <ion-scroll scrollX="true" style='height: 120px'>
-        <div *ngFor='let date of event.voteDayOptions'>
-          <p> {{ date }} </p>
-        </div>
+    <ion-item id='dateList'>
+      <ion-scroll scrollX="true" style='height: 12vh'>
+        <span class='dateBox' *ngFor='let date of event.voteDayOptions'>
+          <div class='dateCircle'  text-center>
+            {{ date }}
+          </div>
+        </span>
       </ion-scroll>
     </ion-item>
-    <ion-item>
-      <ion-scroll scrollX="true" style='height: 120px'>
-        <div *ngFor='let activity  of event.voteLocationActivityOptions'>
-          <p> {{ activity }} </p>
-        </div>
+    <ion-item id='activityList'>
+      <ion-scroll  scrollX="true" style='height: 6vh' >
+        <span class='activityBox' *ngFor='let activity  of event.voteLocationActivityOptions'>
+          <div class='activity'>
+             {{ activity }}
+          </div>
+        </span>
       </ion-scroll>
     </ion-item>
-    <ion-item>
-      <button ion-button (click)='goToVote2(event)'>Your Vote</button>
+    <ion-item id='yourVote' (click)='goToVote2(event)' text-center>
+      <div id='voteStyling'>
+        Vote
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>

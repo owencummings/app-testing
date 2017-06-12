@@ -14,13 +14,18 @@
 
 
 <ion-content>
-  <ion-item-divider>DATES</ion-item-divider>
+  <h1 class='firstH1'>DATES</h1>
   <ion-row>
-    <ion-item>
-      <ion-scroll scrollX="true" style='height: 120px'>
-        <div *ngFor='let date of dateList'>
-          {{ date }}
-        </div>
+    <ion-item id='dateShow'>
+      <ion-scroll scrollX="true" style='height: 12vh'>
+        <span class='dateBox' *ngFor='let date of dateList'>
+            <!--{{ date }} add ion-card, fix width + height, make proper positioning-->
+
+            <div class='dateCircle' text-center>
+              {{ date.substring(5,10) }}
+            </div>
+
+        </span>
       </ion-scroll>
     </ion-item>
   </ion-row>
@@ -29,8 +34,8 @@
     </ion-datetime>
   </ion-item>
   <button ion-button (click)='addToDateList()'>Add</button>
-  <ion-item-divider>TIME</ion-item-divider>
-  <button ion-item (click)='presentTimeOptions()' placeholder='Choose a Time...'>{{ timeOption }}</button>
+  <h1>TIME</h1>
+  <button ion-item (click)='presentTimeOptions()' id='timeSelect' text-center no-lines>{{ timeOption }}</button>
 </ion-content>
 
 <ion-footer>

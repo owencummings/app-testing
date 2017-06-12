@@ -1,3 +1,131 @@
 page-group-vote {
 
+  #inviteList{
+    width: 80vw;
+    height: 12vh;
+    border-radius: 5vh;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    padding-left: 0px;
+  }
+
+  .item-ios.item-block .item-inner{
+    padding-right: 0px;
+
+    .label-ios{
+      margin: 0px;
+    }
+  }
+
+  .avatarBox{
+    height: 12vh;
+    width: 12vh;
+    display: inline-block;
+    margin-right: 2vw;
+  }
+
+  .invite{
+    width: 12vh;
+    height: 12vh;
+  }
+
+  .item-ios ion-avatar ion-img, .item-ios ion-avatar img{
+    width: 10vh;
+    height: 10vh;
+    margin-top: 1vh;
+    margin-left: 1vh;
+    border: solid .5vh map-get($colors, light);
+  }
+
+  #time{
+    height: 6vh;
+    width: 40vw;
+    border-radius: 3vh;
+    margin-left: 30vw;
+    padding: 0px;
+  }
+
+  #dateList{
+    width: 80vw;
+    height: 12vh;
+    border-radius: 5vh;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    padding-left: 0px;
+  }
+
+  .dateBox{
+    height: 12vh;
+    width: 12vh;
+    background-color: black;
+    display: inline-block;
+    margin-right: 2vw;
+  }
+
+  .dateCircle {
+    height: 12vh;
+    width: 12vh;
+    background-color: map-get($colors, dark);
+    border-radius: 50%;
+
+  }
+
+  #activityList{
+    width: 80vw;
+    height: 8vh;
+    border-radius: 5vh;
+    margin-left: 10vw;
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    padding-left: 0px;
+  }
+
+  .activityBox{
+    height: 6vh;
+    background-color: map-get($colors, primary);
+    display: inline-block;
+    margin-left: 2vw;
+    //margin-top: 1vh;
+    //margin-bottom: 1vh;
+    padding: 1vh;
+    border-radius: 3vh;
+    border: solid .5vh map-get($colors, light);
+
+  }
+
+  .activity {
+    color: white;
+    font-weight: bold;
+    top: 50%;
+
+  }
+
+  #yourVote{
+    width: 40vw;
+    height: 8vh;
+    border-radius: 4vh;
+    margin-left: 30vw;
+    margin-top: 23vh;
+    margin-bottom: 3vh;
+    padding-left: 0px;
+  }
+
+  #voteStyling{
+    height: 6vh;
+    width: 36vw;
+    background-color: map-get($colors, primary);
+    display: inline-block;
+
+    //margin-top: 1vh;
+    //margin-bottom: 1vh;
+    padding: 1vh;
+    border-radius: 3vh;
+    border: solid .5vh map-get($colors, light);
+    color: white;
+    font-weight: bold;
+    top: 50%;
+
+  }
 }

@@ -28,11 +28,11 @@ export class GroupCreate3Page {
        public actionSheetCtrl: ActionSheetController) {
       this.dateList = [];
       this.datePicked = '';
-      this.timeOption = 'Choose a Time Option...';
+      this.timeOption = 'Choose Time Option...';
   }
 
   public goToGroupCreatePage4(){
-    if (this.dateList != [] && this.timeOption != 'Chooce a Time Option...'){
+    if (this.dateList != [] && this.timeOption != 'Choose Time Option...'){
       this.newEventProvider.dateList = this.dateList;
       this.newEventProvider.timeSetting = this.timeOption;
       this.navCtrl.push(this.groupCreate4Page);
@@ -41,7 +41,8 @@ export class GroupCreate3Page {
 
   presentTimeOptions(){
     let actionSheet = this.actionSheetCtrl.create({
-      title: 'Choose a timeframe',
+      title: 'Choose A Timeframe',
+      cssClass: 'actionSheet',
       buttons: [
         {
           text: 'Morning',

@@ -1,3 +1,53 @@
 page-group-create3 {
+  h1 {
+    font-weight: bolder;
+    color: map-get($colors, dark);
+    margin-left: 20vw;
+    margin-top: 10vh;
+  }
 
+  .firstH1 {
+    margin-top: 3vh;
+  }
+
+
+  #dateShow{
+    min-height: 120px;
+    height: 20vh;
+    border-radius: 6vh;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-bottom: 3vh;
+  }
+
+  .dateBox{
+    height: 12vh;
+    width: 12vh;
+    background-color: black;
+    display: inline-block;
+    margin-right: 2vw;
+  }
+
+  .dateCircle {
+    height: 12vh;
+    width: 12vh;
+    background-color: map-get($colors, dark);
+    border-radius: 50%;
+
+  }
+
+
+  #timeSelect{
+    height: 10vh;
+    border-radius: 5vh;
+    width: 80vw;
+    margin-left: 10vw;
+  }
+
+  .actionSheet{
+    border: 1vw solid map-get($colors, primary);
+    background-color: black;
+
+
+  }
 }
