@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DataProvider } from '../../providers/data/data';
 
 /**
  * Generated class for the GroupVoteTimePage page.
@@ -14,11 +15,33 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class GroupVoteTimePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  event: any = {
+    id: -1,
+    notification: 0,
+    ownerId: -1,
+    name: '',
+    status: '',
+    message: '',
+    state: -1,
+    voteTime: -1,
+    voteTimeSetting: '',
+    voteTimeOptions: [],
+    voteDayOptions: [],
+    voteLocationActivityOptions: [],
+    eventTime: -1,
+    eventDate: '',
+    eventActivity: '',
+    invitedUsers: [],
+    chat: [],
+    votes: [],
+  };
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GroupVoteTimePage');
+    this.event = this.navParams.get('event')
+    console.log(this.event);
   }
 
 }

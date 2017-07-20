@@ -10,26 +10,26 @@
 
 <ion-content >
   <ion-list>
-    <ion-item>
-      <div *ngFor='let user of event.invitedUsers'>
-        <ion-avatar>
-          <img [src]=dataProvider.data.userDb[user].profilePicture>
-        </ion-avatar>
-      </div>
+    <ion-item id='inviteList'>
+      <ion-scroll scrollX="true" style='height: 12vh'>
+        <span class='avatarBox' *ngFor='let user of event.invitedUsers'>
+          <div class='invite'>
+            <ion-avatar class='avatar'>
+              <img [src]=dataProvider.data.userDb[user].profilePicture>
+            </ion-avatar>
+          </div>
+        </span>
+      </ion-scroll>
     </ion-item>
-    <ion-item>
+    <ion-item id='activity' text-center>
       <h2>{{ event.eventActivity }}</h2>
     </ion-item>
-    <ion-item>
-      <p>- at -</p>
-    </ion-item>
-    <ion-item>
+    <h2 class='backtext' text-center>AT</h2>
+    <ion-item id='time' text-center>
       <h2>{{ event.eventTime }}</h2>
     </ion-item>
-    <ion-item>
-      <p>- on - </p>
-    </ion-item>
-    <ion-item >
+    <h2 class='backtext' text-center>ON</h2>
+    <ion-item id='date' text-center>
       <h2>{{ event.eventDate }}</h2>
     </ion-item>
 

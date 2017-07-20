@@ -58,7 +58,12 @@ export class DataProvider {
           }
 
         ],
-        votes: [],
+        votes: [
+          1,
+          0,
+          0,
+          0
+        ],
       },
       {
         id: 1,

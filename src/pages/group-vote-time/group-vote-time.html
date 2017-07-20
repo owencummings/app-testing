@@ -7,12 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>groupVoteTime</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-item-divider>
+    CHOOSE A TIME
+  </ion-item-divider>
+<div *ngFor='let day of event.voteDayOptions'>
+  <ion-range min='0' max='24'> <!-- would like dualKnobs='true' in there but it is acting strnagely-->
+    <ion-label range-left>MinTime</ion-label>
+    <ion-label range-right>MaxTime</ion-label>
+  </ion-range>
+</div>
 
 </ion-content>

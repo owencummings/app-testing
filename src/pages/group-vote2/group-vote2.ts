@@ -50,11 +50,23 @@ export class GroupVote2Page {
 
   ionViewDidLoad() {
     this.event = this.navParams.get('event');
+    console.log(this.event)
     this.yourLocationVote = this.event.votes.filter(
       vote => vote.id === this.dataProvider.data.id
      );
      console.log(this.yourLocationVote);
   }
+
+  public goToVoteActivity(event){
+    this.navCtrl.push(this.groupVoteActivityPage, {event: event})
+  }
+
+  public goToVoteTime(event){
+    this.navCtrl.push(this.groupVoteTimePage, {event: event})
+
+  }
+
+
 
 
 }

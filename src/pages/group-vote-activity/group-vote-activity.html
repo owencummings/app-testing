@@ -13,6 +13,29 @@
 </ion-header>
 
 <ion-content>
+	<ion-item-divider>
+		PRIORITIZE EVENTS
+	</ion-item-divider>
+
+	<div *ngFor='let activity of event.voteLocationActivityOptions; let i = index' [attr.data-index]='i'>
+    <button ion-item (click)='clickActivity(i)'>
+      {{ activity }}
+      <span *ngIf='event.votes[i] != 0' item-end>
+        <ion-badge item-end>{{ event.votes[i] }}</ion-badge>
+      </span>
+    </button>
+	</div>
 
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar text-center>
+    <button (click)='clickReset()'>
+      RESET
+    </button>
+    <button (click)='navCtrl.pop()'>
+      LOCK
+    </button>
+  </ion-toolbar>
+</ion-footer>

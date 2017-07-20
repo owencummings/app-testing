@@ -13,11 +13,12 @@
       <ion-icon class='newEvent' name='add-circle'></ion-icon>
       <!--<h3 class='newEvent' text-center>- Create New Event -</h3>-->
     </ion-item>
-      <div *ngFor='let event of dataProvider.data.eventDb'>
+      <div *ngFor='let event of this.eventList | async'>
         <div *ngIf='event.eventStage == 0'>
           <button (click)='goToVote(event)' ion-item>
             <ion-avatar item-left>
               <img [src]=dataProvider.data.userDb[event.ownerId].profilePicture>
+              <!-- ^^ looking for something like... getEventPic() with ref('userDb' + userId + 'profilePicture')-->
             </ion-avatar>
             <h2>{{ event.name }}</h2>
             <h3>{{ event.status }}</h3>

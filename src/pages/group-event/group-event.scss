@@ -1,3 +1,79 @@
 page-group-event {
 
+  #inviteList{
+    width: 98w;
+    height: 14vh;
+    border-top-left-radius: 7vh;
+    border-bottom-left-radius: 7vh;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    //margin-bottom: 3vh;
+    padding-left: 0px;
+  }
+
+  .item-ios.item-block .item-inner{
+    padding-right: 0px;
+
+    .label-ios{
+      margin: 0px;
+    }
+  }
+
+  .avatarBox{
+    height: 14vh;
+    width: 14vh;
+    display: inline-block;
+    margin-right: 2vw;
+  }
+
+  .invite{
+    width: 12vh;
+    height: 12vh;
+  }
+
+  .item-ios ion-avatar ion-img, .item-ios ion-avatar img{
+    width: 12vh;
+    height: 12vh;
+    margin-top: 0vh;
+    margin-left: 1vh;
+    border: solid .5vh map-get($colors, light);
+  }
+
+  #activity{
+  	width: 98w;
+    height: 14vh;
+    border-top-right-radius: 7vh;
+    border-bottom-right-radius: 7vh;
+    margin-top: 2vh;
+    //margin-bottom: 3vh;
+    padding-left: 0px;
+  }
+
+  #date{
+     width: 98w;
+    height: 14vh;
+    border-top-left-radius: 7vh;
+    border-bottom-left-radius: 7vh;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    //margin-bottom: 3vh;
+    padding-left: 0px;
+  }
+
+  #time{
+    width: 98w;
+    height: 14vh;
+    border-top-right-radius: 7vh;
+    border-bottom-right-radius: 7vh;
+    margin-top: 2vh;
+    //margin-bottom: 3vh;
+    padding-left: 0px;
+  }
+
+  .backtext{
+    font-weight: bolder;
+    color: map-get($colors, dark);
+    margin-top: 2vh;
+  }
+
 }

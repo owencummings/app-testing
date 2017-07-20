@@ -6,7 +6,8 @@ import { GroupCreatePage } from '../group-create/group-create';
 import { UserProfilePage } from '../user-profile/user-profile';
 import { DataProvider } from '../../providers/data/data';
 import { GroupChatPage } from '../group-chat/group-chat';
-
+import { FirebaseService } from './../../providers/firebase-service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'page-home',
@@ -20,8 +21,13 @@ export class HomePage {
   groupCreatePage = GroupCreatePage;
   userProfilePage = UserProfilePage;
   groupChatPage = GroupChatPage;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
 
+  eventList: FirebaseListObservable<any[]>;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public dataProvider: DataProvider, public firebaseService: FirebaseService) {
+      //this.eventList = this.firebaseService.getEvents();
+      //console.log(this.eventList);
   }
 
   public goToVote(event){
@@ -31,6 +37,7 @@ export class HomePage {
   public goToEvent(event){
     this.navCtrl.push(this.groupEventPage, {event: event});
   }
+
 
   ionViewDidLoad(){
   }

@@ -1,12 +1,17 @@
 page-group-vote {
 
+  .toolbar-background{
+    border: none;
+  }
+
   #inviteList{
-    width: 80vw;
-    height: 12vh;
-    border-radius: 5vh;
-    margin-left: 10vw;
-    margin-top: 5vh;
-    margin-bottom: 3vh;
+    width: 98w;
+    height: 14vh;
+    border-top-left-radius: 7vh;
+    border-bottom-left-radius: 7vh;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    //margin-bottom: 3vh;
     padding-left: 0px;
   }
 
@@ -19,8 +24,8 @@ page-group-vote {
   }
 
   .avatarBox{
-    height: 12vh;
-    width: 12vh;
+    height: 14vh;
+    width: 14vh;
     display: inline-block;
     margin-right: 2vw;
   }
@@ -31,28 +36,31 @@ page-group-vote {
   }
 
   .item-ios ion-avatar ion-img, .item-ios ion-avatar img{
-    width: 10vh;
-    height: 10vh;
-    margin-top: 1vh;
+    width: 12vh;
+    height: 12vh;
+    margin-top: 0vh;
     margin-left: 1vh;
     border: solid .5vh map-get($colors, light);
   }
 
   #time{
-    height: 6vh;
-    width: 40vw;
-    border-radius: 3vh;
-    margin-left: 30vw;
+    width: 98vw;
+    height: 14vh;
+    border-top-right-radius: 7vh;
+    border-bottom-right-radius: 7vh;
+    //margin-left: 2vw;
+    margin-top: 2vh;
     padding: 0px;
   }
 
   #dateList{
-    width: 80vw;
-    height: 12vh;
-    border-radius: 5vh;
-    margin-left: 10vw;
-    margin-top: 5vh;
-    margin-bottom: 3vh;
+    width: 98vw;
+    height: 14vh;
+    border-top-left-radius: 7vh;
+    border-bottom-left-radius: 7vh;
+    margin-left: 2vw;
+    margin-top: 2vh;
+    //margin-bottom: 3vh;
     padding-left: 0px;
   }
 
@@ -61,7 +69,7 @@ page-group-vote {
     width: 12vh;
     background-color: black;
     display: inline-block;
-    margin-right: 2vw;
+    margin-left: 2vw;
   }
 
   .dateCircle {
@@ -73,12 +81,13 @@ page-group-vote {
   }
 
   #activityList{
-    width: 80vw;
-    height: 8vh;
-    border-radius: 5vh;
-    margin-left: 10vw;
-    margin-top: 5vh;
-    margin-bottom: 3vh;
+    width: 98vw;
+    height: 14vh;
+    border-top-right-radius: 7vh;
+    border-bottom-right-radius: 7vh;
+    //margin-left: 2vw;
+    margin-top: 2vh;
+    //margin-bottom: 3vh;
     padding-left: 0px;
   }
 
@@ -107,8 +116,8 @@ page-group-vote {
     height: 8vh;
     border-radius: 4vh;
     margin-left: 30vw;
-    margin-top: 23vh;
-    margin-bottom: 3vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     padding-left: 0px;
   }
 
