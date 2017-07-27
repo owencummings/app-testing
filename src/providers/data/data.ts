@@ -14,6 +14,13 @@ export class DataProvider {
 
   //data: any = [];
 
+  data2: any = {
+    existence: false,
+    displayName: '',
+    uid: '',
+    photoURL: ''
+  }
+
   data = {
 
     id: 0,

@@ -22,12 +22,14 @@ export class HomePage {
   userProfilePage = UserProfilePage;
   groupChatPage = GroupChatPage;
 
-  eventList: FirebaseListObservable<any[]>;
+  //eventList: FirebaseListObservable<any[]>;
+  eventList: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public dataProvider: DataProvider, public firebaseService: FirebaseService) {
       //this.eventList = this.firebaseService.getEvents();
       //console.log(this.eventList);
+      this.eventList  = this.dataProvider.data.eventDb;
   }
 
   public goToVote(event){
