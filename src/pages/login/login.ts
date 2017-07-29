@@ -28,11 +28,30 @@ export class LoginPage {
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
         console.log(user);
-        this.dataProvider.data2.existence = true;
-        this.dataProvider.data2.displayName = user.displayName;
-        this.dataProvider.data2.uid = user.uid;
-        this.dataProvider.data2.photoURL = user.photoURL;
-        this.navCtrl.push(this.homePage);
+        this.dataProvider.data2.existence = [true];
+        this.dataProvider.data2.name = user.displayName;
+        this.dataProvider.data2.id = user.uid;
+        this.dataProvider.data2.profilePicture= user.photoURL;
+        var refLoc = firebase.database().ref('userDb/');
+        console.log('The Reference Location is:')
+        console.log(refLoc);
+        refLoc.child(user.uid).once('value', function(snapshot){
+
+          var exists = (snapshot.val() != null);
+          console.log(snapshot.val())
+          console.log('Existence check:') // this check should be returning false if user is new
+          console.log(exists)
+          if (!exists){
+            console.log('Good')
+            firebase.database().ref('userDb/' + user.uid).set({
+              name: user.displayName,
+              id: user.uid,
+              profilePicture: user.photoURL,
+              eventList: []
+            })
+          }
+        })
+        //this.navCtrl.setRoot(this.homePage);
       } else {
         console.log("There's no user here");
       }
@@ -49,16 +68,28 @@ export class LoginPage {
     }); //change 'email' based on permissions needed
   }
 
-  login2():void{
+  login2(){
     const provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithRedirect(provider).then(() => {
       firebase.auth().getRedirectResult().then( (result) => {
           console.log("Success");
           console.log(result)
-          this.dataProvider.data2.existence = true;
-          this.dataProvider.data2.displayName = result.user.displayName;
-          this.dataProvider.data2.uid = result.user.uid;
-          this.dataProvider.data2.photoURL = result.user.photoURL;
+          this.dataProvider.data2.existence = [true];
+          this.dataProvider.data2.name = result.user.displayName;
+          this.dataProvider.data2.id = result.user.uid;
+          this.dataProvider.data2.profilePicture= result.user.photoURL;
+          var refLoc = firebase.database().ref('userDb/');
+          refLoc.child(result.uid).once('value', function(snapshot){
+            var exists = (snapshot.val() != null);
+            if (!exists){
+              firebase.database().ref('userDb/' + result.uid).set({
+                name: result.user.displayName,
+                id: result.user.uid,
+                profilePicture: result.user.photoURL,
+                eventList: []
+              })
+            }
+          })
           //this.userProfile = result;
           //this.navCtrl.setRoot(this.homePage);
         })
@@ -67,16 +98,16 @@ export class LoginPage {
     })
   }
 
-  logout():void{
+  logout(){
     firebase.auth().signOut();
-    this.dataProvider.data2.existence = false;
-    this.dataProvider.data2.displayName = '';
-    this.dataProvider.data2.uid = '';
-    this.dataProvider.data2.photoURL = '';
+    this.dataProvider.data2.existence = [false];
+    this.dataProvider.data2.name = '';
+    this.dataProvider.data2.id = '';
+    this.dataProvider.data2.profilePicture = '';
   }
 
-  toHome():void{
-    this.navCtrl.push(this.homePage);
+  toHome(){
+    this.navCtrl.setRoot(this.homePage);
   }
 
   ionViewDidLoad() {

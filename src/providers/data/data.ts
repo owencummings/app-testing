@@ -13,12 +13,16 @@ import 'rxjs/add/operator/map';
 export class DataProvider {
 
   //data: any = [];
+  public imageExpand(uid){
+    return "https://graph.facebook.com/" + uid + "/picture"
+  }
 
   data2: any = {
-    existence: false,
-    displayName: '',
-    uid: '',
-    photoURL: ''
+    existence: [false],
+    name: '',
+    id: '',
+    profilePicture: '',
+    invitedEvents: []
   }
 
   data = {

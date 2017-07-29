@@ -14,32 +14,30 @@
 
 
 <ion-content>
-  <!--
-  Try...
+
   <div *ngFor="let existence of this.dataProvider.data2.existence">
-  while changing existence to a bool array, and maybe isolating existence w/ getExistence fxn.
-  -->
-  <div *ngIf="dataProvider.data2.existence | async; else elseBlock">
-    <ion-item>
-      {{ dataProvider.data2.displayName }}
-    </ion-item>
-    <ion-item>
-      {{ dataProvider.data2.uid }}
-    </ion-item>
-    <ion-item>
-      <ion-avatar>
-        <img [src]='dataProvider.data2.photoURL'>
-      </ion-avatar>
-    </ion-item>
-    <button ion-button (click)='toHome()'> Continue </button>
-    <button ion-button (click)='logout()'> Cancel </button>
+    <div *ngIf="existence; else elseBlock">
+      <ion-item>
+        {{ dataProvider.data2.name }}
+      </ion-item>
+      <ion-item>
+        {{ dataProvider.data2.id }}
+      </ion-item>
+      <ion-item>
+        <ion-avatar>
+          <img [src]='dataProvider.data2.profilePicture'>
+        </ion-avatar>
+      </ion-item>
+      <button ion-button (click)='toHome()'> Continue </button>
+      <button ion-button (click)='logout()'> Cancel </button>
+    </div>
+    <ng-template #elseBlock>
+      <ion-item>
+        <button ion-button (click)='login()'> Log In (Native)</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)='login2()'> Log In (ng)</button>
+      </ion-item>
+    </ng-template>
   </div>
-  <ng-template #elseBlock>
-    <ion-item>
-      <button ion-button (click)='login()'> Log In (Native)</button>
-    </ion-item>
-    <ion-item>
-      <button ion-button (click)='login2()'> Log In (ng)</button>
-    </ion-item>
-  </ng-template>
 </ion-content>
