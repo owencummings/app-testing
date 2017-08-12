@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
+import { FirebaseService } from '../../providers/firebase-service';
 import { NewEventProvider } from '../../providers/new-event/new-event';
 import { GroupCreate3Page } from '../group-create3/group-create3';
 /**
@@ -24,11 +25,11 @@ export class GroupCreate2Page {
   friendName: any = '';
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseService: FirebaseService,
       public dataProvider: DataProvider, public newEventProvider: NewEventProvider) {
     this.alterFriends = 'add';
-    this.friends = this.dataProvider.searchFriends('');
-    this.users = [this.dataProvider.data.id];
+    this.friends = this.firebaseService.searchFriends('');
+    this.users = [this.firebaseService.id];
   }
 
   public goToGroupCreatePage3(){
@@ -39,7 +40,7 @@ export class GroupCreate2Page {
   }
 
   public getFriendList(searchTerm){
-    this.friends = this.dataProvider.searchFriends(searchTerm);
+    this.friends = this.firebaseService.searchFriends(searchTerm);
   }
 
   addTo(friendId){

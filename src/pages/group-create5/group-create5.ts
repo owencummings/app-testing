@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 import { NewEventProvider } from '../../providers/new-event/new-event';
+import { FirebaseService } from './../../providers/firebase-service';
 
 /**
  * Generated class for the GroupCreate5Page page.
@@ -37,9 +38,8 @@ export class GroupCreate5Page {
      votes: [],
    };
 
-
   constructor(public navCtrl: NavController, public navParams: NavParams,
-      public dataProvider: DataProvider, public newEventProvider: NewEventProvider) {
+      public dataProvider: DataProvider, public newEventProvider: NewEventProvider, public firebaseService: FirebaseService) {
   }
 
 
@@ -63,9 +63,9 @@ export class GroupCreate5Page {
       chat: [],
       votes: []
     }
-    this.dataProvider.data.eventDb.push(this.event);
+    this.firebaseService.createEvent(this.event);
     this.navCtrl.popToRoot();
-    console.log(this.dataProvider.data)
+    //console.log(this.dataProvider.data)
   }
 
   ionViewDidLoad() {

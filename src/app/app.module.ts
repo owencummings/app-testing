@@ -36,6 +36,16 @@ const cloudSettings: CloudSettings = {
   }
 };
 
+const firebaseConfig = {
+  apiKey: "AIzaSyCwC6BF9ejLBZyJ4VwF6a0KiCXjXopVJuo",
+  authDomain: "linkvote.firebaseapp.com",
+  databaseURL: "https://linkvote.firebaseio.com",
+  projectId: "linkvote",
+  storageBucket: "linkvote.appspot.com",
+  messagingSenderId: "780905015151"
+};
+
+
 
 @NgModule({
   declarations: [
@@ -61,7 +71,7 @@ const cloudSettings: CloudSettings = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
-    //AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [

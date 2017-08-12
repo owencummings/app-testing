@@ -4,6 +4,8 @@ import  firebase  from 'firebase';
 import { Facebook } from '@ionic-native/facebook';
 import { DataProvider } from '../../providers/data/data';
 //import { AngularFireModule } from 'angularfire2';
+import { FirebaseService } from './../../providers/firebase-service';
+//^^ currently not being used but maybe could be considered as an alternatively storage to dataProvider??
 import { HomePage } from '../home/home';
 /**
  * Generated class for the LoginPage page.
@@ -21,13 +23,14 @@ export class LoginPage {
   homePage = HomePage;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(public navCtrl: NavController, public navParams: NavParams, public firebaseService: FirebaseService,
     public dataProvider: DataProvider, public facebook: Facebook) {
 
 
     firebase.auth().onAuthStateChanged( user => {
       if (user) {
         console.log(user);
+        this.firebaseService.id = user.uid; //note, doubling up on data here for no real reason (beyond avoinding conflict)
         this.dataProvider.data2.existence = [true];
         this.dataProvider.data2.name = user.displayName;
         this.dataProvider.data2.id = user.uid;

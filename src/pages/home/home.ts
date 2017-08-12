@@ -8,6 +8,7 @@ import { DataProvider } from '../../providers/data/data';
 import { GroupChatPage } from '../group-chat/group-chat';
 import { FirebaseService } from './../../providers/firebase-service';
 import { FirebaseListObservable } from 'angularfire2/database';
+import firebase from 'firebase';
 
 @Component({
   selector: 'page-home',
@@ -23,13 +24,25 @@ export class HomePage {
   groupChatPage = GroupChatPage;
 
   //eventList: FirebaseListObservable<any[]>;
-  eventList: any;
+  eventList: any[];
+  //eventList : FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public dataProvider: DataProvider, public firebaseService: FirebaseService) {
-      //this.eventList = this.firebaseService.getEvents();
-      //console.log(this.eventList);
-      this.eventList  = this.dataProvider.data.eventDb;
+      /*
+      var ref = firebase.database().ref('eventDb/')
+      ref.once('value', function(snapshot){
+        console.log(snapshot);
+        this.eventList = snapshot;
+      })
+      */
+
+      /*
+      firebaseService.getEvents().subscribe(users => {
+        this.eventList = users
+      })
+      */
+      this.eventList = this.firebaseService.getEvents();
   }
 
   public goToVote(event){

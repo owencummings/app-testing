@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
+import { FirebaseService } from '../../providers/firebase-service';
 
 
 /**
@@ -40,24 +41,16 @@ export class GroupChatPage {
   chatBox = '';
   newMessage = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public firebaseService: FirebaseService, public dataProvider: DataProvider) {
     this.chatBox = "";
   }
 
 
 
   public send(message){
-    if(message && message != "") {
-      this.newMessage = {
-        id: null,
-        time: null,
-        userId: this.dataProvider.data.id,
-        text: message
-      }
-      this.event.chat.push(this.newMessage);
-    }
+    this.firebaseService.sendMessage(message, this.event);
     this.chatBox = "";
-
   }
 
   ionViewDidLoad() {

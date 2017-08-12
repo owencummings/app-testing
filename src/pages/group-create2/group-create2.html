@@ -29,8 +29,8 @@
       <div *ngFor='let friend of friends'>
         <div *ngIf='!users.includes(friend.id)'>
           <ion-item (click)='addTo(friend.id)'>
-            <ion-avatar item-left><img [src]='friend.profilePicture'></ion-avatar>
-            <h2>{{ friend.name }}</h2>
+            <ion-avatar item-left><img [src]='firebaseService.getProfilePicture(friend.id)'></ion-avatar>
+            <h2>{{ firebaseService.getDisplayName(friend.id) }}</h2>
           </ion-item>
         </div>
       </div>
