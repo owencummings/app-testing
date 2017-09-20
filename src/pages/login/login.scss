@@ -1,3 +1,39 @@
 page-login {
 
+
+    #profilePic{
+      width: 80vw;
+      height: 80vw;
+      border-radius: 50%;
+      margin-left: 10vw;
+      margin-top: 10vw;
+      margin-bottom: 8vw;
+      //margin-top: 1vh;
+      padding: 1vw;
+      border-style: solid;
+      border-width: 1vw;
+      border-color: map-get($colors, primary);
+    }
+
+    #icon{
+      width: 10vw;
+      height: 10vw;
+      margin-left: 45vw;
+      margin-bottom: 8vw;
+      border-radius: 50%;
+
+    }
+
+    .buttonDiv{
+      width: 80vw;
+      margin-left: 10vw;
+    }
+
+    #name{
+      margin-bottom: 8vh;
+      color: map-get($colors, primary);
+    }
+
+
+
 }

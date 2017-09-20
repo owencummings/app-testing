@@ -20,9 +20,11 @@
   <ion-item>
     <ion-scroll scrollX="true" style='height: 120px'>
       <div *ngFor='let user of newEventProvider.inviteList'>
-        <ion-avatar style='display: inline-block'>   <!--probably want to use cards here, since I'm using names as well-->
-          <img [src]='dataProvider.data.userDb[user].profilePicture'>
+
+        <ion-avatar style='display: inline-block'>
+          <img [src]='user[2]'>
         </ion-avatar>
+       <!-- probably want to use cards above, since im using names as well -->
       </div>
     </ion-scroll>
   </ion-item>

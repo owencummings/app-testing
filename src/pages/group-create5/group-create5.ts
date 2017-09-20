@@ -47,7 +47,8 @@ export class GroupCreate5Page {
     this.event = {
       id: -1,
       notification: 1,
-      ownerId: this.dataProvider.data.id,
+      ownerId: this.dataProvider.data2.id,
+      photoURL: this.dataProvider.data2.profilePicture,
       name: this.newEventProvider.name,
       status: 'Vote time formatting needed.',
       message: 'Event created.',

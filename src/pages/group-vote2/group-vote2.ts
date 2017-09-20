@@ -51,10 +51,13 @@ export class GroupVote2Page {
   ionViewDidLoad() {
     this.event = this.navParams.get('event');
     console.log(this.event)
-    this.yourLocationVote = this.event.votes.filter(
-      vote => vote.id === this.dataProvider.data.id
-     );
-     console.log(this.yourLocationVote);
+    if (this.event.votes){
+      this.yourLocationVote = this.event.votes.filter(
+        vote => vote.id === this.dataProvider.data.id
+       );
+    }
+    console.log(this.yourLocationVote);
+
   }
 
   public goToVoteActivity(event){

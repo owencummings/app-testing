@@ -11,34 +11,80 @@ page-home {
   }
   */
 
-
+/*
   ion-list{
     background-color: map-get($colors, primary);
+  }
+  */
+
+  .sampleListItem{
+    height: 36vh;
+    width: 100vw;
+    border-style: solid;
+    border-color: black;
+    background-color: #F8BBD0;
+  }
+
+  .sampleListItemSection1{
+    height: 36vh;
+    width: 70vw;
+    border-style: solid;
+    border-color: red;
+    border-top-right-radius: 18vh;
+    border-bottom-right-radius: 18vh;
+  }
+
+  .sampleListItemPhoto{
+    height: 35vh;
+    width: 70vw;
+  }
+
+  .item-ios h2{
+    font-weight: bold;
+  }
+
+  .item-ios h3{
+    color: grey;
+  }
+
+  #icon{
+    height: 9vh;
+    margin-top: .5vh;
   }
 
   .item-ios ion-avatar ion-img, .item-ios ion-avatar img{
     width: 12vh;
     height: 12vh;
+    /*
+    border-style: solid;
+    border-width: .5vw;
+    padding: .5vw;
+    border-color: map-get($colors, primary);*/
+
     //margin-top: 1vh;
 
   }
 
   .item-ios ion-avatar[item-left]{
-    margin: 1vh 3vh 1vh 0vh;
+    //margin: 1vh 3vh 1vh 0vh;
   }
 
   .newEvent {
     color: map-get($colors, light);
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    text-align: center;
+    //padding-top: 2vh;
+    //padding-bottom: 2vh;
+    //text-align: center;
+  }
+
+  #createEvent{
+    height: 10vh;
   }
 
   .item-ios {
     height: 14vh;
-    border-top-left-radius:  7vh;
-    border-bottom-left-radius:  7vh;
-    margin-top: 2vh;
+    //border-top-left-radius:  7vh;
+    //border-bottom-left-radius:  7vh;
+    //margin-top: 2vh;
     margin-left: 2vh;
     padding-left: 1vh;
 
@@ -47,6 +93,12 @@ page-home {
   #profileIcon {
     font-size: 2em;
     padding-left: 6vw;
-    color: #fff;
+    color: map-get($colors, primary)
+  }
+
+  #plusIcon{
+    font-size: 2em;
+    padding-right: 6vw;
+    color: map-get($colors, primary)
   }
 }

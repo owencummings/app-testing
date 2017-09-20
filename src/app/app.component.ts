@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { Platform, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { ImgcacheService } from '../global/services';
 import firebase from 'firebase';
+import { FacebookService, InitParams } from 'ngx-facebook';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -15,12 +17,20 @@ export class MyApp {
   homePage = HomePage;
   dataProvider = DataProvider;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, loadingCtrl: LoadingController) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
+       loadingCtrl: LoadingController, private fb: FacebookService) {
     /*
     let loader = this.loadingCtrl.create();
     loader.present();
     this.listenToUserStatusUpdate(loader);
     */
+
+    let initParams: InitParams = {
+      appId: '309357276191675',
+      xfbml: true,
+      version: 'v2.9'
+    }
+
     const firebaseConfig = {
       apiKey: "AIzaSyCwC6BF9ejLBZyJ4VwF6a0KiCXjXopVJuo",
       authDomain: "linkvote.firebaseapp.com",
@@ -29,7 +39,14 @@ export class MyApp {
       storageBucket: "linkvote.appspot.com",
       messagingSenderId: "780905015151"
     };
+
     firebase.initializeApp(firebaseConfig);
+    fb.init(initParams)
+
+
+
+
+
 
     /*
     firebase.auth().getRedirectResult().then(function(result) {
@@ -77,6 +94,11 @@ export class MyApp {
       //statusBar.overlaysWebView(true);
       //splashScreen.hide();
 
+      /*
+      imgcacheService.initImgCache().then(() => {
+        this.nav.setRoot(this.rootPage);
+      });
+      */
     });
 
 

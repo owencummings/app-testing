@@ -14,20 +14,20 @@
         <span class='avatarBox' *ngFor='let user of event.invitedUsers'>
           <div id='invite'>
             <ion-avatar>
-              <img  class='avatar' [src]=dataProvider.data.userDb[user].profilePicture>
+              <img  class='avatar' src='{{ user[2] }}'>
             </ion-avatar>
           </div>
         </span>
       </ion-scroll>
     </ion-item>
     <ion-item id='time' text-center>
-      <h2>{{ event.voteTimeSetting }}</h2>
+      <h2>{{ event.voteTimeOptions }}</h2>
     </ion-item>
     <ion-item id='dateList'>
       <ion-scroll scrollX="true" style='height: 12vh'>
         <span class='dateBox' *ngFor='let date of event.voteDayOptions'>
           <div class='dateCircle'  text-center>
-            {{ date }}
+            {{ date | date: 'M/d'}}
           </div>
         </span>
       </ion-scroll>

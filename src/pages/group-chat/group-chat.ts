@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 import { FirebaseService } from '../../providers/firebase-service';
+import firebase from 'firebase';
 
 
 /**
@@ -40,6 +41,7 @@ export class GroupChatPage {
 
   chatBox = '';
   newMessage = {};
+  messages = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public firebaseService: FirebaseService, public dataProvider: DataProvider) {
@@ -55,6 +57,10 @@ export class GroupChatPage {
 
   ionViewDidLoad() {
       this.event = this.navParams.get('event');
+      firebase.database().ref('/eventDb' + '/' + this.event.id + '/chat').on('child_added', (snapshot) => { //wtf is this
+        this.messages.push(snapshot.val())
+        console.log(this.messages);
+      });
   }
 
 }

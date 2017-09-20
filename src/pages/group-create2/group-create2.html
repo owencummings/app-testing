@@ -26,12 +26,18 @@
     <div *ngSwitchCase='"add"'>
       <ion-searchbar [(ngModel)]='friendName' (input)='getFriendList(friendName)' placeholder='Search Friends...' animated>
       </ion-searchbar>
-      <div *ngFor='let friend of friends'>
-        <div *ngIf='!users.includes(friend.id)'>
-          <ion-item (click)='addTo(friend.id)'>
-            <ion-avatar item-left><img [src]='firebaseService.getProfilePicture(friend.id)'></ion-avatar>
-            <h2>{{ firebaseService.getDisplayName(friend.id) }}</h2>
-          </ion-item>
+      <div *ngIf="friends && friends.length > 0">
+        <div *ngFor='let friend of friends'>
+          <div *ngIf='!users.includes(friend)'> <!-- i think friend should be [uid, name, photoULR here]-->
+            <ion-item (click)='addTo(friend)'>
+
+              <ion-avatar item-left>
+                <img src='{{ friend[2] }}'>
+              </ion-avatar>
+
+              <h2>{{ friend[1] }}</h2>
+            </ion-item>
+          </div>
         </div>
       </div>
     </div>

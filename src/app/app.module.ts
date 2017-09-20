@@ -10,6 +10,7 @@ import { FirebaseService } from './../providers/firebase-service';
 import { Facebook } from '@ionic-native/facebook';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import firebase from 'firebase';
+import { FacebookModule } from 'ngx-facebook';
 
 
 import { MyApp } from './app.component';
@@ -71,7 +72,8 @@ const firebaseConfig = {
     BrowserModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    FacebookModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

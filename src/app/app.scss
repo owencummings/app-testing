@@ -14,9 +14,11 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+//@import "compass";
+
 .header{
   //color: map-get($colors, light) !important;
-  padding-top: 0vh;
+  //padding-top: 4vh;
 }
 
 ion-navbar.toolbar {
@@ -25,6 +27,10 @@ ion-navbar.toolbar {
 
 ion-title{
   //padding-top: 4vh;
+}
+
+ion-header::after {
+  background-image: none;
 }
 
 .toolbar-title-md{
@@ -37,17 +43,20 @@ ion-title{
     }
 
 .toolbar-background{
-    background-color: map-get($colors, primary);
-    //border: 0px !important;
+    background-color: white;
+
 }
 
+/*
 .ion-divider-ios{
   margin-top: 30vh;
   background-color: map-get($colors, primary) !important;
 }
+*/
+
 
 .nextArrowDown{
       font-size: 4em;
-      color: #fff;
+      color: #000;
       padding-left: 45vw;
 }

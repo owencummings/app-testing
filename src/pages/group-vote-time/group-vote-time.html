@@ -7,20 +7,41 @@
 <ion-header>
 
   <ion-navbar>
+    <ion-title>
+      CHOOSE A TIME
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
+  <!--
   <ion-item-divider>
     CHOOSE A TIME
   </ion-item-divider>
-<div *ngFor='let day of event.voteDayOptions'>
-  <ion-range min='0' max='24'> <!-- would like dualKnobs='true' in there but it is acting strnagely-->
-    <ion-label range-left>MinTime</ion-label>
-    <ion-label range-right>MaxTime</ion-label>
+-->
+<div *ngFor='let day of event.voteDayOptions; let i = index' [attr.data-index]='i'>
+  <ion-item-divider>
+    {{ day | date: 'fullDate'}}
+  </ion-item-divider>
+  <ion-range [(ngModel)]='voteArray[i]' dualKnobs='true' snaps='true' step='4' min='0' max='24'>
+     <!-- would like dualKnobs='true' in there but it is acting strnagely-->
+     <!-- steps is also behaving strangely and won't appear without snaps -->
+    <ion-label range-left>{{ getMinTime(event.voteTimeOptions) }}</ion-label>
+    <ion-label range-right>{{ getMaxTime(event.voteTimeOptions) }}</ion-label>
   </ion-range>
 </div>
 
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar text-center>
+    <button (click)='clickReset()'>
+      RESET
+    </button>
+    <button (click)='lockIn()'>
+      LOCK
+    </button>
+  </ion-toolbar>
+</ion-footer>

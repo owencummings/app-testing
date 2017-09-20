@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
-
+import { FirebaseService } from '../../providers/firebase-service';
+import firebase from 'firebase';
 /**
  * Generated class for the GroupVoteActivityPage page.
  *
@@ -37,30 +38,58 @@ export class GroupVoteActivityPage {
   };
 
   priorityInt: any = 0;
+  voteArray: any[] = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public firebaseService: FirebaseService, public dataProvider: DataProvider) {
   }
+
+
 
   ionViewDidLoad() {
     this.event = this.navParams.get('event')
     console.log(this.event);
-    for (let vote of this.event.votes){
-      if (vote > this.priorityInt){
-        this.priorityInt = vote;
+
+    var uid = this.firebaseService.id;
+    this.priorityInt = 1;
+    if (this.event.activityVotes){
+      if (this.event.activityVotes[uid] !== null){
+        console.log('Has proper key.')
+        this.voteArray = this.event.activityVotes[uid]
+        var intCounter = 0;
+        var i = 0;
+        while (i < this.voteArray.length){
+          if (this.voteArray[i] > intCounter){
+            intCounter = this.voteArray[i]
+          }
+          i = i + 1;
+        }
+        this.priorityInt = intCounter + 1;
+      } else {
+        this.voteArray = new Array(this.event.voteLocationActivityOptions.length)
+        this.voteArray.fill(0)
+        firebase.database().ref('/eventDb/' + this.event.id + '/activityVotes' + '/' + this.firebaseService.id).set(this.voteArray);
       }
+    } else {
+      this.voteArray = new Array(this.event.voteLocationActivityOptions.length)
+      this.voteArray.fill(0)
+      firebase.database().ref('/eventDb/' + this.event.id + '/activityVotes' + '/' + this.firebaseService.id).set(this.voteArray);
     }
-    this.priorityInt = this.priorityInt + 1;
+    console.log(this.voteArray)
+    console.log(this.priorityInt)
   }
 
   clickActivity(i){
-    if ((this.event.votes[i] == this.priorityInt - 1) && (this.event.votes[i] != 0 )){
-      this.event.votes[i] = 0;
+    if ((this.voteArray[i] == this.priorityInt - 1) && (this.voteArray[i] != 0 )){
+      this.voteArray[i] = 0;
       this.priorityInt = this.priorityInt - 1;
 
-    } else if (this.event.votes[i] == 0) {
-      this.event.votes[i] = this.priorityInt;
+    } else if (this.voteArray[i] == 0) {
+      this.voteArray[i] = this.priorityInt;
       this.priorityInt = this.priorityInt + 1;
     }
+    firebase.database().ref('/eventDb/' + this.event.id + '/activityVotes' + '/' + this.firebaseService.id).set(this.voteArray);
 
   }
 
@@ -68,12 +97,10 @@ export class GroupVoteActivityPage {
   clickReset(){
     var i;
     i = 0;
-    while( i < this.event.votes.length){
-      this.event.votes[i] = 0;
-      i = i + 1;
-    }
+    this.voteArray = new Array(this.event.voteLocationActivityOptions.length)
+    this.voteArray.fill(0)
+    firebase.database().ref('/eventDb/' + this.event.id + '/activityVotes' + '/' + this.firebaseService.id).set(this.voteArray);
     this.priorityInt = 1;
-    console.log(this.event.votes);
   }
 
 

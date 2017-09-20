@@ -7,45 +7,66 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class FirebaseService {
 
+
+    photoCache: any = {};
     id: any = '0'; //this should resolve to a uid when logged in
+    accessToken: any = '';
 
     constructor(public afd: AngularFireDatabase){ //public afd: AngularFireDatabase
           console.log('Firebase Service Provider')
       }
 
-    public getEvents():any[]{
+    public pushVote(event, vote){
+      firebase.database().ref('/eventDb' + '/' + event.key).set(vote);
+    }
+
+    public getVote(event){
+      firebase.database().ref('/eventDb' + '/' + event.key + '/' + this.id)
+    }
+
+
+    public getPhoto(uid){
+      if (this.photoCache.hasKey(uid)){
+        return this.photoCache.uid
+      } else {
+        firebase.database().ref('/userDb' + '/' + uid + '/profilePicture').once('value', (snapshot) =>{
+          this.photoCache.uid = snapshot.val()
+        })
+      }
+    }
+
+    public getEvents(){ //:any[]     -- im just putting stuff into the constructor of HomePage,
+                        /**             but I'll keep it documented here..........................  */
       console.log("Getting Events")
       var eventArr = [];
       var eventIndices: any =  {};
-      firebase.database().ref('/userDb' + '/' + this.id + '/invitedEvents').once('value', function(snapshot){
+      firebase.database().ref('/userDb' + '/' + this.id + '/invitedEvents').on('value', function(snapshot){
         eventIndices = snapshot.val();
-      }).then( result => {
         console.log(eventIndices);
         Object.keys(eventIndices).forEach(key => {
           var event1;
-          firebase.database().ref('/eventDb' + '/' + key).once('value').then((value) => {
-            event1 = value.val();
+          firebase.database().ref('/eventDb' + '/' + key).on('value', function(snapshot2){
+            event1 = snapshot2.val();
             console.log(event1);
             eventArr.push(event1)
           });
+          //return eventArr
         })
-      return eventArr;
-      }).catch((error) => {
-        console.log('Error!')
-        return eventArr;
-      });
-      return eventArr;
+      })
+      //return eventArr;
       //return this.afd.list('/eventDb');
     }
 
     public createEvent(thing){
         console.log(thing);
         var refLoc = firebase.database().ref('/eventDb').push(thing)
+        console.log(refLoc.key)
+        firebase.database().ref('/eventDb' + '/' + refLoc.key  + '/id').set(refLoc.key);
         //firebase.database().ref('/userDb' + '/' + this.id + '/invitedEvents').push(refLoc.key)
 
         //firebase.database().ref('/userDb' + '/' + this.id + '/invitedEvents' + '/' + refLoc.key).set(refLoc.key)
         thing.invitedUsers.forEach( uid =>{
-          firebase.database().ref('/userDb' + '/' + uid + '/invitedEvents' + '/' + refLoc.key).set(refLoc.key)
+          firebase.database().ref('/userDb' + '/' + uid[0] + '/invitedEvents' + '/' + refLoc.key).set(refLoc.key)
         });
     }
 
@@ -89,7 +110,7 @@ export class FirebaseService {
 
     public getDisplayName(uid){
       var profile = firebase.database().ref('/userDb' + '/' + uid ).once('value', function(snapshot){
-        console.log(snapshot.val().profilePicture)
+        console.log(snapshot.val())
         return snapshot.val().displayName
       }).catch((error) => {
         console.log('Display name fetch error.')
@@ -109,7 +130,7 @@ export class FirebaseService {
           userId: this.id,
           text: message
         }
-        firebase.database().ref('/eventDb' + '/' + event.key + '/chat').push(newMessage);
+        firebase.database().ref('/eventDb' + '/' + event.id + '/chat').push(newMessage);
       }
     }
 

@@ -25,6 +25,8 @@ export class HomePage {
 
   //eventList: FirebaseListObservable<any[]>;
   eventList: any[];
+  //eventArr: any[];
+  eventIndices: any;
   //eventList : FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
@@ -42,7 +44,29 @@ export class HomePage {
         this.eventList = users
       })
       */
-      this.eventList = this.firebaseService.getEvents();
+      //this.eventList = this.firebaseService.getEvents();
+      console.log("Getting Events")
+      this.eventList = [];
+      this.eventIndices =  {};
+      firebase.database().ref('/userDb' + '/' + this.firebaseService.id + '/invitedEvents').on('value', (snapshot) => {
+        console.log(snapshot.val());
+        this.eventIndices = snapshot.val();
+        if (this.eventIndices){
+          Object.keys(this.eventIndices).forEach(key => {
+            var event1;
+            firebase.database().ref('/eventDb' + '/' + key).on('value', (snapshot2) => {
+              event1 = snapshot2.val();
+              this.eventList = this.eventList.filter(ev =>
+                ev.id !== event1.id
+              );
+              this.eventList.unshift(event1); //strange priority stuff here? should use childAdded over value?
+            });
+            //return eventArr
+          })
+        }
+      })
+      //return eventArr;
+      //return this.afd.list('/eventDb')
   }
 
   public goToVote(event){

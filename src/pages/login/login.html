@@ -4,6 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<!--
 <ion-header>
 
   <ion-navbar>
@@ -11,32 +12,34 @@
   </ion-navbar>
 
 </ion-header>
+-->
 
 
 <ion-content>
 
   <div *ngFor="let existence of this.dataProvider.data2.existence">
     <div *ngIf="existence; else elseBlock">
-      <ion-item>
-        {{ dataProvider.data2.name }}
-      </ion-item>
-      <ion-item>
-        {{ dataProvider.data2.id }}
-      </ion-item>
-      <ion-item>
-        <ion-avatar>
-          <img [src]='dataProvider.data2.profilePicture'>
-        </ion-avatar>
-      </ion-item>
-      <button ion-button (click)='toHome()'> Continue </button>
-      <button ion-button (click)='logout()'> Cancel </button>
+      <img id='profilePic' [src]='dataProvider.data2.profilePicture'>
+      <img id='icon' src="assets/img/icon.png">
+      <div text-center id='name' >
+        <h3>{{ dataProvider.data2.name }}</h3>
+      </div>
+      <div text-center class='buttonDiv'>
+        <button ion-button block (click)='toHome()'> Continue </button>
+      </div>
+      <div text-center class='buttonDiv'>
+        <button ion-button block (click)='logout()'>   Cancel   </button>
+      </div>
     </div>
     <ng-template #elseBlock>
       <ion-item>
-        <button ion-button (click)='login()'> Log In (Native)</button>
+        <button ion-button (click)='login()'> Log In (Native, facebook)</button>
       </ion-item>
       <ion-item>
-        <button ion-button (click)='login2()'> Log In (ng)</button>
+        <button ion-button (click)='login2()'> Log In (ng, firebase)</button>
+      </ion-item>
+      <ion-item>
+        <button ion-button (click)='login3()'> Log In (ng, facebook)</button>
       </ion-item>
     </ng-template>
   </div>

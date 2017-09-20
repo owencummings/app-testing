@@ -16,11 +16,13 @@
 
 <ion-content>
 
-  <div *ngFor='let message of event.chat'>
+  <div *ngFor='let message of messages'>
     <ion-item>
+      <!--
       <ion-avatar>
         <img [src]=dataProvider.data.userDb[message.userId].profilePicture>
       </ion-avatar>
+    -->    
       {{ message.text }}
     </ion-item>
   </div>
