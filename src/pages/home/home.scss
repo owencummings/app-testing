@@ -20,23 +20,69 @@ page-home {
   .sampleListItem{
     height: 36vh;
     width: 100vw;
-    border-style: solid;
-    border-color: black;
+    //border-style: solid;
+    //border-color: black;
     background-color: #F8BBD0;
+  }
+
+  .addEvent{
+    background-color: #FCE4EC;
+    height: 8vh;
+
   }
 
   .sampleListItemSection1{
     height: 36vh;
     width: 70vw;
-    border-style: solid;
-    border-color: red;
+    //border-style: solid;
+    //border-color: red;
     border-top-right-radius: 18vh;
     border-bottom-right-radius: 18vh;
+    background-size: cover;
+    background-position: 50% 50%;
   }
 
-  .sampleListItemPhoto{
-    height: 35vh;
-    width: 70vw;
+  .sampleItemTitle{
+    position: absolute;
+    //height: 18vh;
+    height: 36vh;
+    width: 68vw;
+    border-top-right-radius: 18vh;
+    border-bottom-right-radius: 18vh;
+    padding-top: 8vh;
+    padding-left: 4vw;
+    color: white;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
+    h1 {
+      //letter-spacing: 4px;
+      font-size: 3em;
+    }
+    //border: solid black;
+
+  }
+
+  .sampleItemNotification{
+    position: absolute;
+    height: 36vh;
+    width: 68vw;
+    border-top-right-radius: 18vh;
+    border-bottom-right-radius: 18vh;
+    padding-top: 20vh;
+    padding-left: 4vw;
+    color: white;
+    //overflow-wrap: break-word;
+    overflow: hidden;
+    //white-space: nowrap;
+    text-overflow: ellipsis;
+
+    h3 {
+      font-size: 1.5em;
+    }
+    //border: solid black;
+
   }
 
   .item-ios h2{
@@ -96,9 +142,14 @@ page-home {
     color: map-get($colors, primary)
   }
 
-  #plusIcon{
+  #calendarIcon{
     font-size: 2em;
     padding-right: 6vw;
+    color: map-get($colors, primary)
+  }
+
+  #plusIcon{
+    font-size: 4em;
     color: map-get($colors, primary)
   }
 }

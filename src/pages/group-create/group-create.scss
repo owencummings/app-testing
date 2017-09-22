@@ -1,7 +1,7 @@
 page-group-create {
   h1 {
     font-weight: bolder;
-    color: map-get($colors, dark);
+    color: map-get($colors, primary);
     margin-left: 20vw;
     margin-top: 20vh;
   }
@@ -10,6 +10,29 @@ page-group-create {
     margin-left: 10%;
     width: 80%;
     border-radius: 7vh;
-    
+
   }
+
+  #icon{
+    height: 6vh;
+    //margin-top: 1vh;
+    position: absolute;
+    right: 45vh;
+    top: 2vh;
+  }
+
+  .scroll-content{
+    background-color: #F8BBD0;
+  }
+
+  .toolbar-background{
+    background-color: #F8BBD0;
+  }
+
+  .nextArrowDown{
+
+        color: map-get($colors, primary);
+  }
+
+
 }

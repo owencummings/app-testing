@@ -1,27 +1,22 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-toolbar>
     <ion-title>
+      <ion-icon id='personIcon' name='person'></ion-icon>
+      <img id='icon' src="assets/img/iconnobg.png" (click)='this.navCtrl.pop()'>
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <img [src]=dataProvider.data.userDb[dataProvider.data.id].profilePicture> <!--going to want to use photoURL event.-->
-  <ion-list>
-    <ion-item text-center>
-      <h2>{{ dataProvider.data2.name }}</h2>
-    </ion-item>
-    <ion-item text-center>
-      <h2>Link Score: 100</h2>
-    </ion-item>
-    <ion-item text-center>
-      <h2>View Full Profile</h2>
-    </ion-item>
-    <ion-item text-center (click)='logout()'>
-      <h2>Log Out</h2>
-    </ion-item>
+    <img id='profilePic' [src]='dataProvider.data2.profilePicture'>
+    <div text-center id='name' >
+      <h3>{{ dataProvider.data2.name }}</h3>
+    </div>
+    <div text-center class='buttonDiv'>
+      <button ion-button icon-only class='circleButton'>
+        <ion-icon class='circleButtonIcon' name='cog'></ion-icon>
+      </button>
+    </div>
 
 
-
-  </ion-list>
 </ion-content>

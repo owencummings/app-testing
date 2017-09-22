@@ -1,9 +1,13 @@
 
-<ion-header>
-  <ion-navbar>
-  </ion-navbar>
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>
+      <img id='icon' src="assets/img/iconnobg.png" (click)='this.navCtrl.pop()'>
+    </ion-title>
+  </ion-toolbar>
 </ion-header>
 
+<!--<div id='canvas'>-->
 <ion-content>
   <ion-list>
       <h1>
@@ -14,8 +18,9 @@
     </ion-item>
   </ion-list>
 </ion-content>
+<!--</div>-->
 
-<ion-footer>
+<ion-footer no-border>
   <ion-toolbar (click)='goToGroupCreatePage2()'>
     <ion-icon class='nextArrowDown' name='arrow-down'></ion-icon>
   </ion-toolbar>

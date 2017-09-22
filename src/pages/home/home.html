@@ -6,11 +6,11 @@
       </button>
     </ion-buttons>
     <ion-title>
-      <img id='icon' src="assets/img/iconwhite.png">
+      <img id='icon' src="assets/img/iconnobg.png">
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only color='white' (click)='this.navCtrl.push(groupCreatePage)' >
-        <ion-icon id='plusIcon' name='calendar'></ion-icon>
+        <ion-icon id='calendarIcon' name='calendar'></ion-icon>
       </button>
     </ion-buttons>
 
@@ -25,22 +25,37 @@
       <h3 class='newEvent' text-center>- Create New Event -</h3>
     </ion-item>
   -->
+      <div text-center  (click)='this.navCtrl.push(groupCreatePage)' class='addEvent'>
+        <ion-icon id='plusIcon' name='add'></ion-icon>
+      </div>
       <div class="sampleListItem">
-        <div class="sampleListItemSection1">
-          <!--<img [src]='dataProvider.data2.profilePicture' class='sampleListItemPhoto'>-->
+        <div [ngStyle]="{'background-image': 'linear-gradient(rgba(248, 187, 208, .7), rgba(248, 187, 208, .7)),
+        url(' + dataProvider.data.userDb[0].profilePicture + ')'}"
+          class="sampleListItemSection1">
+            <div class='sampleItemTitle'>
+              <h1>Lorem ipsum</h1>
+            </div>
+            <div class='sampleItemNotification'>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
         </div>
       </div>
-      <div *ngFor='let event of this.eventList'> <!-- had async pipe here but causing errors on login page-->
+
+      <div *ngFor='let event of this.eventList; let i = index' [attr.data-index]='i'> <!-- had async pipe here but causing errors on login page-->
         <div *ngIf='event.eventStage == 0'>
-          <button (click)='goToVote(event)' ion-item>
-            <ion-avatar item-left>
-              <img src= "{{ event.photoURL }}">
-              <!-- ^^ looking for something like... getEventPic() with ref('userDb' + userId + 'profilePicture')-->
-            </ion-avatar>
-            <h2>{{ event.name }}</h2>
-            <h3>{{ event.status }}</h3>
-            <p>{{ event.message }}</p>
-          </button>
+            <div class="sampleListItem" [ngStyle]="{'background': getColor(i)}" (click)='goToVote(event)'>
+              <div [ngStyle]="{'background-image': 'linear-gradient(' + getColor(i) +', ' + getColor(i) + '),
+              url(' + event.photoURL + ')'}"
+                class="sampleListItemSection1">
+                  <div class='sampleItemTitle'>
+                    <h1>{{ event.name }}</h1>
+                  </div>
+                  <div class='sampleItemNotification'>
+                    <p>{{ event.message}}</p>
+                  </div>
+              </div>
+            </div>
         </div>
         <div *ngIf='event.eventStage == 1'>
           <button (click)='goToEvent(event)' ion-item>

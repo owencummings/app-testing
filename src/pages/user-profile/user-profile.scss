@@ -1,10 +1,55 @@
 page-user-profile {
-  img {
+
+  #personIcon{
+    color: map-get($colors, primary);
+    font-size: 3em;
+    position: absolute;
+    top: 2vh;
+  }
+
+  #icon{
+    height: 6vh;
+    //margin-top: 1vh;
+    position: absolute;
+    margin-left: 33vw;
+    top: 2vh;
+  }
+
+  #profilePic{
+    width: 80vw;
+    height: 80vw;
+    border-radius: 50%;
+    margin-left: 10vw;
+    margin-top: 10vw;
+    margin-bottom: 8vw;
+    //margin-top: 1vh;
+    padding: 1vw;
+    border-style: solid;
+    border-width: 1vw;
+    border-color: map-get($colors, primary);
+  }
+
+  .buttonDiv{
+    height: 20vh;
     width: 100vw;
   }
 
-  .list-ios {
-    margin: 0px;
+
+  .circleButton{
+    height: 10vh;
+    width: 10vh;
+    background-color: map-get($colors, primary);
+    border-radius: 50%
   }
 
+  .circleButtonIcon{
+    font-size: 3em;
+    color: white;
+  }
+
+
+  #name{
+    margin-bottom: 8vh;
+    color: map-get($colors, primary);
+  }
 }
