@@ -76,6 +76,7 @@ export class GroupCreate3Page {
           }
         },{
           text: 'Cancel',
+          role:'cancel'
 
         }
       ]

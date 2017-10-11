@@ -40,6 +40,8 @@ export class GroupCreatePage {
   */
 
   name: any = '';
+  date: any = '';
+  minTime: any = '';
   /*
   activities: any = [];
   dates: any =  [];
@@ -60,6 +62,8 @@ export class GroupCreatePage {
 
 
     this.name = '';
+    this.date = '';
+    this.minTime = '';
     /*
     this.activities = [];
     this.dates = [];
@@ -72,12 +76,15 @@ export class GroupCreatePage {
   }
 
   public goToGroupCreatePage2(){
-    if (this.name != ''){
+    if (this.name != '' && this.date !== ''){
       this.newEventProvider.name = this.name;
+      this.newEventProvider.voteDate = this.date
       this.navCtrl.push(this.groupCreate2Page);
     }
     console.log(this.newEventProvider.name);
+    console.log(this.newEventProvider.voteDate);
   }
+
 
 
 /*
@@ -129,7 +136,8 @@ export class GroupCreatePage {
   }
 */
   ionViewDidLoad() {
-    console.log('ionViewDidLoad GroupCreatePage');
+    console.log('Hello, world!')
+    this.minTime = (new Date()).toISOString();
   }
 
 }

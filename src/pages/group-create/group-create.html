@@ -14,8 +14,15 @@
         TITLE
       </h1>
     <ion-item>
-      <ion-input [(ngModel)]='name' placeholder='Name Your Group...' type='search' text-center></ion-input>
+      <ion-input [(ngModel)]='name' placeholder='Name the Group...' type='search'></ion-input>
     </ion-item>
+    <h1>
+      VOTE TIME
+    </h1>
+  <ion-item>
+    <ion-datetime min='{{ minTime }}' [(ngModel)]='date' displayFormat='DDDD MMMM D, YYYY h:mmTZD A'
+    pickerFormat='M D YYYY h:mm A' placeholder='Set Vote Time...' text-center></ion-datetime>
+  </ion-item>
   </ion-list>
 </ion-content>
 <!--</div>-->

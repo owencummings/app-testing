@@ -204,4 +204,37 @@ export class DataProvider {
       return user.name.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
     });
   }
+
+  public getColor(i){
+    switch(i){
+      case 0:{
+        return 'rgba(248, 187, 208, 0.7)'
+      }
+      case 1: {
+        return 'rgba(244, 143, 177, 0.7)'
+      }
+      case 2: {
+        return 'rgba(240, 98, 146, 0.7)'
+      }
+      case 3: {
+        return 'rgba(236, 64, 122, 0.7)'
+      }
+      case 4: {
+        return 'rgba(233, 30, 99, 0.7)'
+      }
+      case 5: {
+        return 'rgba(216, 27, 96, 0.7)'
+      }
+      case 6: {
+        return 'rgba(194, 24, 91, 0.7)'
+      }
+      case 7: {
+        return 'rgba(173, 20, 87, 0.7)'
+      }
+      case 8: {
+        return 'rgba(136, 14, 79, 0.7)'
+      }
+    }
+  }
+
 }

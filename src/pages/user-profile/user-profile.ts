@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 import { LoginPage } from '../login/login';
+import { OptionsPage } from '../options/options';
 import firebase from 'firebase';
  /**
  * Generated class for the UserProfilePage page.
@@ -17,6 +18,7 @@ import firebase from 'firebase';
 export class UserProfilePage {
 
   loginPage = LoginPage;
+  optionsPage = OptionsPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider) {
   }

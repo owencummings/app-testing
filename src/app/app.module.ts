@@ -16,6 +16,7 @@ import { FacebookModule } from 'ngx-facebook';
 import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
+import { OptionsPage } from '../pages/options/options';
 import { GroupVotePage } from '../pages/group-vote/group-vote';
 import { GroupVote2Page } from '../pages/group-vote2/group-vote2';
 import { GroupVoteActivityPage } from '../pages/group-vote-activity/group-vote-activity';
@@ -53,6 +54,7 @@ const firebaseConfig = {
     MyApp,
     LoginPage,
     HomePage,
+    OptionsPage,
     GroupVotePage,
     GroupVote2Page,
     GroupVoteActivityPage,
@@ -80,6 +82,7 @@ const firebaseConfig = {
     MyApp,
     LoginPage,
     HomePage,
+    OptionsPage,
     GroupVotePage,
     GroupVote2Page,
     GroupVoteActivityPage,

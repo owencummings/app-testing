@@ -1,17 +1,42 @@
 page-group-create2 {
   ion-segment{
+    /*
     padding: 2vh 0vw;
-    font-weight: bold;
+    //font-weight: bold;
     width: 80vw;
     height: 4vh;
-    margin: 1vh auto;
+    margin: 1vh auto;*/
   }
 
   .segment-ios .segment-button {
+    /*
     border-color: #fff;
     border-width: .4vh;
     width: 40%;
-
+    */
   }
+
+  .scroll-content{
+    background-color: #F48FB1;
+  }
+
+  .toolbar-background{
+    background-color: #F48FB1;
+  }
+
+  .friendAddItem{
+    height: 20vh;
+    width: 100vw;
+    color: white;
+    background-size: cover;
+    background-position: 50% 50%;
+    display: table-cell;
+    vertical-align: middle;
+
+    h2{
+    }
+  }
+
+
 
 }

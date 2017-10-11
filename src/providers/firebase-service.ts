@@ -125,8 +125,8 @@ export class FirebaseService {
     public sendMessage(message, event){
       if(message && message != "") {
         var newMessage = {
-          id: null,
-          time: null,
+          id: null, //will need to alter this if ordering just via push stops working
+          time: null, //adress this when you do all the time stuff
           userId: this.id,
           text: message
         }

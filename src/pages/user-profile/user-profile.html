@@ -13,7 +13,7 @@
       <h3>{{ dataProvider.data2.name }}</h3>
     </div>
     <div text-center class='buttonDiv'>
-      <button ion-button icon-only class='circleButton'>
+      <button ion-button icon-only class='circleButton' (click)='this.navCtrl.push(optionsPage)'>
         <ion-icon class='circleButtonIcon' name='cog'></ion-icon>
       </button>
     </div>

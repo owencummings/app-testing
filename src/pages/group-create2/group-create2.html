@@ -4,20 +4,21 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header no-border>
 
-  <ion-navbar>
-  </ion-navbar>
+  <ion-toolbar>
+        <ion-icon class='nextArrowDown' name='arrow-up' (click)='this.navCtrl.pop()'></ion-icon>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content>
   <ion-segment [(ngModel)]="alterFriends">
-    <ion-segment-button style='border-radius: 2vh; margin-right: 4vw;' value="add">
+    <ion-segment-button value="add">
       ADD
     </ion-segment-button>
-    <ion-segment-button style='border-radius: 2vh; margin-right: 4vw;' value="remove">
+    <ion-segment-button value="remove">
       REMOVE
     </ion-segment-button>
   </ion-segment>
@@ -27,16 +28,15 @@
       <ion-searchbar [(ngModel)]='friendName' (input)='getFriendList(friendName)' placeholder='Search Friends...' animated>
       </ion-searchbar>
       <div *ngIf="friends && friends.length > 0">
-        <div *ngFor='let friend of friends'>
+        <div *ngFor='let friend of friends; let i = index' [attr.data-index]='i'>
           <div *ngIf='!users.includes(friend)'> <!-- i think friend should be [uid, name, photoULR here]-->
-            <ion-item (click)='addTo(friend)'>
+            <div text-center (click)='addTo(friend)' class='friendAddItem'
+            [ngStyle]="{'background-image': 'linear-gradient(' + dataProvider.getColor(i) +', ' + dataProvider.getColor(i) + '),
+            url(' + friend[2] + ')'}">
+                <!--<img src='{{ friend[2] }}' class='friendAddPhoto'>-->
+                <h2>{{ friend[1] }}</h2>
 
-              <ion-avatar item-left>
-                <img src='{{ friend[2] }}'>
-              </ion-avatar>
-
-              <h2>{{ friend[1] }}</h2>
-            </ion-item>
+            </div>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@
   </div>
 </ion-content>
 
-<ion-footer>
+<ion-footer no-border>
   <ion-toolbar (click)='goToGroupCreatePage3()'>
     <ion-icon class='nextArrowDown' name='arrow-down'></ion-icon>
   </ion-toolbar>

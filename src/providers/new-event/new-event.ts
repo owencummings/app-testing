@@ -13,6 +13,7 @@ export class NewEventProvider {
 
 
   name: any =  [];
+  voteDate: any = [];
   inviteList: any = [];
   dateList: any = [];
   timeSetting: any = [];

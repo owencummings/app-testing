@@ -1,28 +1,37 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border no-shadow>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only color='white' (click)='this.navCtrl.pop()' >
+        <ion-icon id='backIcon' name='arrow-back'></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
     {{ event.name }}
-    <ion-icon item-right name='text' (click)='goToChat(event)'></ion-icon>
     </ion-title>
-  </ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only color='white' (click)='goToChat(event)' >
+        <ion-icon id='chatIcon' name='text'></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item id='inviteList'>
+  <ion-list no-lines>
+    <ion-item id='inviteList' no-border>
       <ion-scroll scrollX="true" style='height: 12vh'>
         <span class='avatarBox' *ngFor='let user of event.invitedUsers'>
           <div id='invite'>
-            <ion-avatar>
-              <img  class='avatar' src='{{ user[2] }}'>
-            </ion-avatar>
+            <!--<ion-avatar>-->
+              <img  class='invitePic' src='{{ user[2] }}'>
+            <!--</ion-avatar>-->
           </div>
         </span>
       </ion-scroll>
     </ion-item>
-    <ion-item id='time' text-center>
-      <h2>{{ event.voteTimeOptions }}</h2>
-    </ion-item>
+    <div id='time' text-center>
+      <h5>{{ event.voteTimeOptions }}</h5>
+    </div>
     <ion-item id='dateList'>
       <ion-scroll scrollX="true" style='height: 12vh'>
         <span class='dateBox' *ngFor='let date of event.voteDayOptions'>
@@ -36,20 +45,15 @@
       <ion-scroll  scrollX="true" style='height: 6vh' >
         <span class='activityBox' *ngFor='let activity  of event.voteLocationActivityOptions'>
           <div class='activity'>
-             {{ activity }}
+             <h5 class='activityText'>{{ activity }}</h5>
           </div>
         </span>
       </ion-scroll>
     </ion-item>
-  </ion-list>
-</ion-content>
-
-<ion-footer>
-  <ion-toolbar>
     <ion-item id='yourVote' (click)='goToVote2(event)' text-center>
       <div id='voteStyling'>
         Vote
       </div>
     </ion-item>
-  </ion-toolbar>
-</ion-footer>
+  </ion-list>
+</ion-content>

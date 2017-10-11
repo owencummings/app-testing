@@ -1,29 +1,41 @@
 page-group-create3 {
+
+  .scroll-content{
+    background-color: #F06292;
+  }
+
+  ion-scroll.scroll-x .scroll-content{
+    background-color: transparent;
+  }
+
+  .toolbar-background{
+    background-color: #F06292;
+  }
+
   h1 {
     font-weight: bolder;
     color: map-get($colors, dark);
     margin-left: 20vw;
-    margin-top: 10vh;
-  }
-
-  .firstH1 {
     margin-top: 3vh;
   }
+
+
 
 
   #dateShow{
     min-height: 120px;
     height: 20vh;
-    border-radius: 6vh;
-    width: 80vw;
-    margin-left: 10vw;
+    //border-radius: 6vh;
+    width: 100vw;
+    //margin-left: 10vw;
     margin-bottom: 3vh;
+    background-color: #F8BBD0;
   }
 
   .dateBox{
     height: 12vh;
     width: 12vh;
-    background-color: black;
+    //background-color: black;
     display: inline-block;
     margin-right: 2vw;
   }
@@ -31,11 +43,34 @@ page-group-create3 {
   .dateCircle {
     height: 12vh;
     width: 12vh;
-    background-color: map-get($colors, dark);
+    background-color:  #F06292;
     border-radius: 50%;
-
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-size: 1.5em;
   }
 
+  #datePicker{
+    height: 10vh;
+    border-radius: 5vh;
+    width: 50vw;
+    margin-left: 10vw;
+  }
+
+  #dateAddButton{
+    //position: absolute;
+    bottom: 10vh;
+    left: 65vw;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+    display: inline-block;
+    color: map-get($colors, primary);
+    background-color: white;
+    //border: .5vh solid white;
+    //padding: .5vh;
+  }
 
   #timeSelect{
     height: 10vh;

@@ -42,6 +42,7 @@ export class GroupChatPage {
   chatBox = '';
   newMessage = {};
   messages = [];
+  id = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public firebaseService: FirebaseService, public dataProvider: DataProvider) {
@@ -55,7 +56,17 @@ export class GroupChatPage {
     this.chatBox = "";
   }
 
+  private getPhoto(uid){
+    //console.log(this.event.invitedUsers)
+    //console.log(uid)
+    var filterArr = this.event.invitedUsers.filter(user => user[0] === uid);
+    //console.log(filterArr)
+    return filterArr[0][2]
+  }
+
   ionViewDidLoad() {
+      console.log(this.dataProvider.data.id)
+      this.id = this.dataProvider.data.id
       this.event = this.navParams.get('event');
       firebase.database().ref('/eventDb' + '/' + this.event.id + '/chat').on('child_added', (snapshot) => { //wtf is this
         this.messages.push(snapshot.val())

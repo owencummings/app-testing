@@ -53,6 +53,18 @@ $toolbar-wp-height: 10vh;
 
 
 $item-ios-detail-push-color: map-get($colors, primary);
+
+
+$action-sheet-ios-button-text-color: map-get($colors, primary);
+$action-sheet-ios-border-radius: 5vh;
+$segment-button-ios-background-color-activated: white;
+$segment-button-ios-border-width:	0px;
+$segment-button-ios-text-color: white;
+$segment-button-ios-border-radius: 0px;
+$searchbar-ios-background-color: transparent;
+$searchbar-ios-border-color: transparent;
+//$action-sheet-ios-border-color: map-get($colors, primary);
+
 /*
 $segment-button-ios-font-size: 2rem;
 

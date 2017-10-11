@@ -1,18 +1,61 @@
 page-group-vote {
 
+
+  .scroll-content{
+    background-color: #FCE4EC;
+    //background-color: white;
+  }
+
+  ion-scroll.scroll-x .scroll-content{
+    background-color: #FCE4EC;
+    height: 20vh;
+  }
+
+  .scroll-x{
+    height: 20vh !important;
+  }
+
   .toolbar-background{
+    background-color: #F8BBD0;
+    background-color: white;
     border: none;
   }
 
+  #backIcon{
+    font-size: 2em;
+    padding-left: 6vw;
+    color: map-get($colors, primary);
+    //color: white;
+  }
+
+  #chatIcon{
+    font-size: 2em;
+    padding-right: 6vw;
+    color: map-get($colors, primary);
+    //color: white;
+  }
+
+
+
+.toolbar-title-ios{
+  color: map-get($colors, primary);
+  //color: white;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
   #inviteList{
-    width: 98w;
-    height: 14vh;
-    border-top-left-radius: 7vh;
-    border-bottom-left-radius: 7vh;
-    margin-left: 2vw;
-    margin-top: 2vh;
+    width: 92vw;
+    height: 20vh;
+    //border-top-left-radius: 7vh;
+    //border-bottom-left-radius: 7vh;
+    margin-left: 4vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
     //margin-bottom: 3vh;
     padding-left: 0px;
+    border: solid 2vw white;
+
   }
 
   .item-ios.item-block .item-inner{
@@ -24,115 +67,154 @@ page-group-vote {
   }
 
   .avatarBox{
-    height: 14vh;
-    width: 14vh;
+    height: 20vh;
+    width: 16vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
     display: inline-block;
-    margin-right: 2vw;
+    //margin-right: 2vw;
+    //border: solid 1px black;
   }
 
   .invite{
-    width: 12vh;
-    height: 12vh;
+    width: 20vh;
+    height: 16vh;
+  }
+
+  .invitePic{
+    width: 16vh;
+    height: 16vh;
+    margin-top: 2vh;
+    //margin-right: 1vh;
   }
 
   .item-ios ion-avatar ion-img, .item-ios ion-avatar img{
-    width: 12vh;
-    height: 12vh;
-    margin-top: 0vh;
-    margin-left: 1vh;
-    border: solid .5vh map-get($colors, light);
+    width: 16vh;
+    height: 16vh;
+    margin-top: 2vh;
+    margin-left: 2vh;
+    //border: solid .5vh map-get($colors, light);
   }
 
   #time{
-    width: 98vw;
-    height: 14vh;
-    border-top-right-radius: 7vh;
-    border-bottom-right-radius: 7vh;
-    //margin-left: 2vw;
-    margin-top: 2vh;
-    padding: 0px;
+    width: 92vw;
+    height: 20vh;
+    //border-top-right-radius: 7vh;
+    //border-bottom-right-radius: 7v`h;
+    margin-left: 4vw;
+    //padding-left: 2vw;
+    //border-radius: 7vh;
+    margin-bottom: 2vh;
+    padding-top: 5vh;
+    background-color: white;
+
+    border: solid 2vw transparent;
   }
 
   #dateList{
-    width: 98vw;
-    height: 14vh;
-    border-top-left-radius: 7vh;
-    border-bottom-left-radius: 7vh;
-    margin-left: 2vw;
+    width: 92vw;
+    height: 20vh;
+    //border-top-left-radius: 7vh;
+    //border-bottom-left-radius: 7vh;
+    margin-left: 4vw;
     margin-top: 2vh;
+    margin-bottom: 4vh;
     //margin-bottom: 3vh;
     padding-left: 0px;
+    border: solid 2vw white;
   }
 
   .dateBox{
-    height: 12vh;
-    width: 12vh;
-    background-color: black;
+    height: 16vh;
+    width: 16vh;
+    //background-color: black;
     display: inline-block;
     margin-left: 2vw;
+    margin-top: 2vh;
   }
 
   .dateCircle {
-    height: 12vh;
-    width: 12vh;
-    background-color: map-get($colors, dark);
-    border-radius: 50%;
+    height: 16vh;
+    width: 16vh;
+    //background-color: map-get($colors, dark);
+
+    background-color:  #F06292;
+    //border-radius: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    font-size: 1.5em;
 
   }
 
   #activityList{
-    width: 98vw;
-    height: 14vh;
-    border-top-right-radius: 7vh;
-    border-bottom-right-radius: 7vh;
-    //margin-left: 2vw;
+    width: 92vw;
+    height: 20vh;
+    border: solid 2vw white;
+    //border-top-right-radius: 7vh;
+    //border-bottom-right-radius: 7vh;
+    margin-left: 4vw;
     margin-top: 2vh;
     //margin-bottom: 3vh;
     padding-left: 0px;
   }
 
   .activityBox{
-    height: 6vh;
-    background-color: map-get($colors, primary);
+    height: 16vh;
+    width: 16vh;
+    //background-color: black;
     display: inline-block;
     margin-left: 2vw;
-    //margin-top: 1vh;
-    //margin-bottom: 1vh;
-    padding: 1vh;
-    border-radius: 3vh;
-    border: solid .5vh map-get($colors, light);
-
+    margin-top: 2vh;
   }
 
   .activity {
-    color: white;
-    font-weight: bold;
-    top: 50%;
+    height: 16vh;
+    width: 16vh;
+    //background-color: map-get($colors, dark);
 
+    background-color:  #F06292;
+    //border-radius: 50%;
+    //display: table-cell;
+    //vertical-align: middle;
+    padding-top: .2vh;
+    padding-left: .2vh;
+    color: white;
+    font-size: 1.5em;
+  }
+
+  .activityText{
+    font-size: .9em;
+    font-weight: 400;
+    margin-top: .1vh;
+    margin-left: .25vh;
   }
 
   #yourVote{
-    width: 40vw;
-    height: 8vh;
-    border-radius: 4vh;
-    margin-left: 30vw;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    width: 92vw;
+    height: 20vh;
+    //border-top-left-radius: 7vh;
+    //border-bottom-left-radius: 7vh;
+    margin-left: 4vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    //margin-bottom: 3vh;
     padding-left: 0px;
+    border: solid 2vw white;
+    background-color: transparent;
   }
 
   #voteStyling{
     height: 6vh;
     width: 36vw;
-    background-color: map-get($colors, primary);
+    background-color:white;
     display: inline-block;
 
     //margin-top: 1vh;
     //margin-bottom: 1vh;
-    padding: 1vh;
-    border-radius: 3vh;
-    border: solid .5vh map-get($colors, light);
-    color: white;
+    padding: 1vh;;
+    //border: solid .5vh map-get($colors, light);
+    color: map-get($colors, primary);
     font-weight: bold;
     top: 50%;
 

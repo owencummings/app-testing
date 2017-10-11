@@ -29,6 +29,9 @@
         <ion-icon id='plusIcon' name='add'></ion-icon>
       </div>
       <div class="sampleListItem">
+        <div class='sampleItemTimeBubble'>
+         6h to vote.
+        </div>
         <div [ngStyle]="{'background-image': 'linear-gradient(rgba(248, 187, 208, .7), rgba(248, 187, 208, .7)),
         url(' + dataProvider.data.userDb[0].profilePicture + ')'}"
           class="sampleListItemSection1">
@@ -40,12 +43,13 @@
                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
+
       </div>
 
       <div *ngFor='let event of this.eventList; let i = index' [attr.data-index]='i'> <!-- had async pipe here but causing errors on login page-->
         <div *ngIf='event.eventStage == 0'>
-            <div class="sampleListItem" [ngStyle]="{'background': getColor(i)}" (click)='goToVote(event)'>
-              <div [ngStyle]="{'background-image': 'linear-gradient(' + getColor(i) +', ' + getColor(i) + '),
+            <div class="sampleListItem" [ngStyle]="{'background': dataProvider.getColor(i)}" (click)='goToVote(event)'>
+              <div [ngStyle]="{'background-image': 'linear-gradient(' + dataProvider.getColor(i) +', ' + dataProvider.getColor(i) + '),
               url(' + event.photoURL + ')'}"
                 class="sampleListItemSection1">
                   <div class='sampleItemTitle'>
@@ -66,6 +70,10 @@
             <h3>{{ event.status }}</h3>
             <p>{{ event.message }}</p>
           </button>
+        </div>
+      </div>
+      <div class='endGraphic' [ngStyle]="{'background': dataProvider.getColor(this.eventList.length)}">
+        <div class='endGraphicCurve' [ngStyle]="{'background': dataProvider.getColor(this.eventList.length)}" >
         </div>
       </div>
   </ion-list>
