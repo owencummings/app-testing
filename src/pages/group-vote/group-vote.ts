@@ -24,7 +24,7 @@ export class GroupVotePage{
     status: '',
     message: '',
     state: -1,
-    voteTime: -1,
+    voteTime: '',
     voteTimeSetting: '',
     voteTimeOptions: [],
     voteDayOptions: [],
@@ -40,6 +40,7 @@ export class GroupVotePage{
 
   groupChatPage = GroupChatPage;
   groupVote2Page = GroupVote2Page;
+  localTime: any = '';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public dataProvider: DataProvider){
   }
@@ -58,6 +59,8 @@ export class GroupVotePage{
     console.log(this.event);
     this.event = this.navParams.get('event');
     console.log(this.event);
+    this.localTime = (new Date).toISOString();
+    console.log(this.localTime);
   }
 
 }

@@ -18,6 +18,11 @@
 
 <ion-content>
   <ion-list no-lines>
+    <div *ngIf="event.voteTime > localTime">
+      <ion-item >
+        Time reading success!
+      </ion-item>
+    </div>
     <ion-item id='inviteList' no-border>
       <ion-scroll scrollX="true" style='height: 12vh'>
         <span class='avatarBox' *ngFor='let user of event.invitedUsers'>

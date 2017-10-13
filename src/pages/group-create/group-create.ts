@@ -78,7 +78,8 @@ export class GroupCreatePage {
   public goToGroupCreatePage2(){
     if (this.name != '' && this.date !== ''){
       this.newEventProvider.name = this.name;
-      this.newEventProvider.voteDate = this.date
+      var offset = (new Date).getTimezoneOffset()/60;
+      this.newEventProvider.voteDate = this.date + '-' + offset + ':00';
       this.navCtrl.push(this.groupCreate2Page);
     }
     console.log(this.newEventProvider.name);
@@ -138,6 +139,11 @@ export class GroupCreatePage {
   ionViewDidLoad() {
     console.log('Hello, world!')
     this.minTime = (new Date()).toISOString();
+    var local = new Date; //today (local time)
+    var offset = local.getTimezoneOffset()
+    console.log(local);
+    console.log(offset/60);
+
   }
 
 }

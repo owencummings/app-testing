@@ -53,7 +53,7 @@ export class GroupCreate5Page {
       status: 'Vote time formatting needed.',
       message: 'Event created.',
       eventStage: 0,
-      voteTime: null,
+      voteTime: this.newEventProvider.voteDate,
       voteTimeOptions: this.newEventProvider.timeSetting,
       voteDayOptions: this.newEventProvider.dateList,
       voteLocationActivityOptions: this.newEventProvider.eventList,
